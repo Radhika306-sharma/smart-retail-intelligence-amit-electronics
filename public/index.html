@@ -160,12 +160,27 @@
   .service-name { font-size: 17px; font-weight: 700; margin-bottom: 8px; }
   .service-desc { font-size: 14px; color: var(--grey); line-height: 1.7; }
   .service-badge { display: inline-block; margin-top: 14px; background: var(--blue-dim); color: var(--blue-bright); font-size: 11px; letter-spacing: 1px; text-transform: uppercase; padding: 4px 10px; border-radius: 50px; font-family: 'Space Mono', monospace; }
+.service-image {
+    width: 100%;
+    height: 220px;
+    overflow: hidden;
+    border-radius: 12px;
+    margin-bottom: 18px;
+}
 
+.service-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+} 
   /* WHY US */
   #whyus { background: var(--dark); }
   .why-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; margin-top: 0; }
   .why-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 40px; }
   .why-card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 22px 20px; transition: border-color 0.2s, transform 0.2s; }
+
   .why-card:hover { border-color: var(--blue); transform: translateY(-2px); }
   .why-num { font-family: 'Bebas Neue', sans-serif; font-size: 32px; color: var(--blue-bright); line-height: 1; margin-bottom: 8px; }
   .why-title { font-weight: 700; font-size: 15px; margin-bottom: 6px; }
@@ -188,7 +203,16 @@
   .gallery-item { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; transition: transform 0.25s, box-shadow 0.25s; cursor: pointer; }
   .gallery-item:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(30,144,255,0.15); }
   .gallery-item.hidden { display: none; }
-  .gallery-thumb { height: 160px; display: flex; align-items: center; justify-content: center; font-size: 52px; background: linear-gradient(135deg, var(--card2), var(--dark)); border-bottom: 1px solid var(--border); }
+  .gallery-thumb {
+    height: 220px;
+    overflow: hidden;
+    border-bottom: 1px solid var(--border);}
+    .gallery-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
   .gallery-info { padding: 16px; }
   .gallery-name { font-weight: 600; font-size: 15px; margin-bottom: 4px; }
   .gallery-cat { font-size: 11px; letter-spacing: 1px; text-transform: uppercase; color: var(--blue-bright); font-family: 'Space Mono', monospace; }
@@ -896,12 +920,63 @@
     <h2 class="section-title">OUR <span class="blue">SERVICES</span></h2>
     <p class="section-sub">From the moment you walk in to long after installation — we're with you at every step.</p>
     <div class="services-grid">
-      <div class="service-card"><div class="service-icon">🚗</div><div class="service-name">Car Accessories</div><div class="service-desc">Seat covers, floor mats, steering wheels, body kits, LED lighting, alloy wheels & more. Everything to make your car feel personal and premium.</div><span class="service-badge">Interior & Exterior</span></div>
-      <div class="service-card"><div class="service-icon">🎵</div><div class="service-name">Android Music Systems</div><div class="service-desc">Latest Android head units with GPS, Bluetooth, Apple CarPlay & Android Auto. Fitted perfectly for your car model — clean, professional installation.</div><span class="service-badge">Installation Included</span></div>
-      <div class="service-card"><div class="service-icon">📷</div><div class="service-name">Dash Cameras</div><div class="service-desc">Front, rear & 360° dash cams from trusted brands. Always-on recording for your safety and legal protection on the road.</div><span class="service-badge">Hidden Install Available</span></div>
-      <div class="service-card"><div class="service-icon">🔒</div><div class="service-name">CCTV Sales & Installation</div><div class="service-desc">Complete CCTV packages for homes, shops, offices & warehouses. IP cameras, DVR/NVR systems with remote viewing on your phone.</div><span class="service-badge">Remote Viewing Setup</span></div>
-      <div class="service-card"><div class="service-icon">🏠</div><div class="service-name">Home Security Solutions</div><div class="service-desc">Video doorbells, motion sensors, smart locks, alarm systems — complete home protection solutions designed and installed by our team.</div><span class="service-badge">Full System Design</span></div>
-      <div class="service-card"><div class="service-icon">🏪</div><div class="service-name">Shop Security Solutions</div><div class="service-desc">Protect your business with multi-camera systems, access control, and real-time alerts. Trusted by dozens of shops in Gwalior.</div><span class="service-badge">Commercial Grade</span></div>
+      <div class="service-card">
+    <div class="service-image">
+      <img src="../images/services_car_accessories.png" alt="Car Accessories">
+    </div>
+    
+    <div class="service-name">Car Accessories</div>
+        <div class="service-desc">Seat covers, floor mats, steering wheels, body kits, LED lighting, alloy wheels & more. Everything to make your car feel personal and premium.</div>
+        <span class="service-badge">Interior & Exterior</span>
+      </div>
+      <div class="service-card">
+    <div class="service-image">
+        <img src="../images/services_androidsystem.png" alt="Android Music Systems">
+    </div>
+
+        <div class="service-name">Android Music Systems</div>
+        <div class="service-desc">Latest Android head units with GPS, Bluetooth, Apple CarPlay & Android Auto. Fitted perfectly for your car model — clean, professional installation.</div>
+        <span class="service-badge">Installation Included</span>
+      </div>
+      <div class="service-card">
+    <div class="service-image">
+        <img src="../images/services_dashcam.png" alt="Dash Cameras">
+    </div>
+
+    <div class="service-name">Dash Cameras</div>
+        <div class="service-desc">Front, rear & 360° dash cams from trusted brands. Always-on recording for your safety and legal protection on the road.</div>
+        <span class="service-badge">Hidden Install Available</span>
+      </div>
+      <div class="service-card">
+    <div class="service-image">
+        <img src="../images/services_cctv.png" alt="CCTV">
+    </div>
+
+
+    <div class="service-name">CCTV Sales & Installation</div>
+        <div class="service-desc">Complete CCTV packages for homes, shops, offices & warehouses. IP cameras, DVR/NVR systems with remote viewing on your phone.</div>
+        <span class="service-badge">Remote Viewing Setup</span>
+      </div>
+      <div class="service-card">
+    <div class="service-image">
+        <img src="../images/services_homesecurity.png" alt="Home Security Solutions">
+    </div>
+
+
+        <div class="service-name">Home Security Solutions</div>
+        <div class="service-desc">Video doorbells, motion sensors, smart locks, alarm systems — complete home protection solutions designed and installed by our team.</div>
+        <span class="service-badge">Full System Design</span>
+      </div>
+      <div class="service-card">
+    <div class="service-image">
+        <img src="../images/services_shopsecurity.png" alt="Shop Security Solutions">
+    </div>
+
+
+        <div class="service-name">Shop Security Solutions</div>
+        <div class="service-desc">Protect your business with multi-camera systems, access control, and real-time alerts. Trusted by dozens of shops in Gwalior.</div>
+        <span class="service-badge">Commercial Grade</span>
+      </div>
     </div>
   </div>
 </section>
@@ -957,12 +1032,54 @@
       <button class="filter-btn" onclick="filterGallery('electronics', this)">⚡ Car Electronics</button>
     </div>
     <div class="gallery-grid" id="galleryGrid">
-      <div class="gallery-item" data-cat="interior" onclick="openModal('interior')"><div class="gallery-thumb">🪑</div><div class="gallery-info"><div class="gallery-name">Car Interior</div><div class="gallery-cat">Seat Covers · Mats · Steering · More</div><div class="gallery-view-hint">Tap to view all products →</div></div></div>
-      <div class="gallery-item" data-cat="exterior" onclick="openModal('exterior')"><div class="gallery-thumb">✨</div><div class="gallery-info"><div class="gallery-name">Car Exterior</div><div class="gallery-cat">LED Lights · Body Kits · Alloys · More</div><div class="gallery-view-hint">Tap to view all products →</div></div></div>
-      <div class="gallery-item" data-cat="audio" onclick="openModal('audio')"><div class="gallery-thumb">🎵</div><div class="gallery-info"><div class="gallery-name">Car Audio</div><div class="gallery-cat">Android Head Units · Speakers · Subwoofers</div><div class="gallery-view-hint">Tap to view all products →</div></div></div>
-      <div class="gallery-item" data-cat="dash" onclick="openModal('dash')"><div class="gallery-thumb">📷</div><div class="gallery-info"><div class="gallery-name">Dash Cameras</div><div class="gallery-cat">Front · Rear · 360° Cameras</div><div class="gallery-view-hint">Tap to view all products →</div></div></div>
-      <div class="gallery-item" data-cat="cctv" onclick="openModal('cctv')"><div class="gallery-thumb">🔒</div><div class="gallery-info"><div class="gallery-name">CCTV & Security</div><div class="gallery-cat">IP Cameras · DVR/NVR · Doorbells · Alarms</div><div class="gallery-view-hint">Tap to view all products →</div></div></div>
-      <div class="gallery-item" data-cat="electronics" onclick="openModal('electronics')"><div class="gallery-thumb">⚡</div><div class="gallery-info"><div class="gallery-name">Car Electronics</div><div class="gallery-cat">Parking Sensors · GPS · Inverters · More</div><div class="gallery-view-hint">Tap to view all products →</div></div></div>
+      <div class="gallery-item" data-cat="interior" onclick="openModal('interior')">
+        <div class="gallery-thumb"><img src="../images/category_car_interior.png" alt="Car Interior"></div>
+        <div class="gallery-info">
+          <div class="gallery-name">Car Interior</div>
+          <div class="gallery-cat">Seat Covers · Mats · Steering · More</div>
+          <div class="gallery-view-hint">Tap to view all products →</div>
+        </div>
+      </div>
+      <div class="gallery-item" data-cat="exterior" onclick="openModal('exterior')">
+        <div class="gallery-thumb"><img src="../images/category_car_exterior.png" alt="Car Exterior"></div>
+        <div class="gallery-info">
+          <div class="gallery-name">Car Exterior</div>
+          <div class="gallery-cat">LED Lights · Body Kits · Alloys · More</div>
+          <div class="gallery-view-hint">Tap to view all products →</div>
+        </div>
+      </div>
+      <div class="gallery-item" data-cat="audio" onclick="openModal('audio')">
+        <div class="gallery-thumb"><img src="../images/category_car_audio.png" alt="Car Audio"></div>
+        <div class="gallery-info">
+          <div class="gallery-name">Car Audio</div>
+          <div class="gallery-cat">Android Head Units · Speakers · Subwoofers</div>
+          <div class="gallery-view-hint">Tap to view all products →</div>
+        </div>
+      </div>
+      <div class="gallery-item" data-cat="dash" onclick="openModal('dash')">
+        <div class="gallery-thumb"><img src="../images/category_dashcam.png" alt="Dash Cameras"></div>
+        <div class="gallery-info">
+          <div class="gallery-name">Dash Cameras</div>
+          <div class="gallery-cat">Front · Rear · 360° Cameras</div>
+          <div class="gallery-view-hint">Tap to view all products →</div>
+        </div>
+      </div>
+      <div class="gallery-item" data-cat="cctv" onclick="openModal('cctv')">
+        <div class="gallery-thumb"><img src="../images/category_cctv.png" alt="CCTV Security"></div>
+        <div class="gallery-info">
+          <div class="gallery-name">CCTV & Security</div>
+          <div class="gallery-cat">IP Cameras · DVR/NVR · Doorbells · Alarms</div>
+          <div class="gallery-view-hint">Tap to view all products →</div>
+        </div>
+      </div>
+      <div class="gallery-item" data-cat="electronics" onclick="openModal('electronics')">
+        <div class="gallery-thumb"><img src="../images/category_car_elec.png" alt="Car Electronics"></div>
+        <div class="gallery-info">
+          <div class="gallery-name">Car Electronics</div>
+          <div class="gallery-cat">Parking Sensors · GPS · Inverters · More</div>
+          <div class="gallery-view-hint">Tap to view all products →</div>
+        </div>
+      </div>
     </div>
     <div style="text-align:center; margin-top:36px;">
       <p style="color:var(--grey); font-size:14px; margin-bottom:16px;">Don't see what you need? We likely have it.</p>
@@ -1020,7 +1137,7 @@
               (c) Use the chart already embedded in the Jupyter notebook output
           -->
           <img
-            src="./charts/02_top20_a_class.png"
+            src="../charts/02_top20_a_class.png"
             alt="Top 20 A-Class Products by Revenue FY 25-26"
             onerror="this.parentElement.innerHTML='<div class=\'chart-placeholder\'><div class=\'chart-placeholder-icon\'>📊</div><div class=\'chart-placeholder-label\'>Top 20 A-Class Products</div><div style=\'font-size:11px;color:#445566;margin-top:4px;font-family:monospace;\'>Add image: ./charts/02_top20_a_class.png</div></div>'"
           />
@@ -1046,7 +1163,7 @@
       <div class="insight-chart-card">
         <div class="chart-img-wrap">
           <img
-            src="./charts/05_revenue_pie.png"
+            src="../charts/05_revenue_pie.png"
             alt="Revenue Share by Category FY 2025-26"
             onerror="this.parentElement.innerHTML='<div class=\'chart-placeholder\'><div class=\'chart-placeholder-icon\'>🥧</div><div class=\'chart-placeholder-label\'>Revenue by Category</div><div style=\'font-size:11px;color:#445566;margin-top:4px;font-family:monospace;\'>Add image: ./charts/05_category_pie.png</div></div>'"
           />
@@ -1072,7 +1189,7 @@
       <div class="insight-chart-card">
         <div class="chart-img-wrap">
           <img
-            src="./charts/07_demand_forecast.png"
+            src="../charts/07_demand_forecast.png"
             alt="Demand Forecast Top 3 Products"
             onerror="this.parentElement.innerHTML='<div class=\'chart-placeholder\'><div class=\'chart-placeholder-icon\'>📈</div><div class=\'chart-placeholder-label\'>Demand Forecast</div><div style=\'font-size:11px;color:#445566;margin-top:4px;font-family:monospace;\'>Add image: ./charts/07_demand_forecast.png</div></div>'"
           />
@@ -1238,7 +1355,7 @@ Although I never give 5 star rating to any business entity, Amit Electronics tru
         <div style="margin-top:16px; background:var(--card); border:1px solid var(--border); border-radius:var(--radius); padding:20px; text-align:center;">
           <p style="font-size:13px; color:var(--grey); margin-bottom:12px; text-transform:uppercase; letter-spacing:1px; font-family:'Space Mono',monospace;">Scan to Leave a Google Review</p>
           <div style="width:120px; height:120px; background:var(--blue-dim); border:1px solid var(--border); border-radius:8px; margin:0 auto; overflow:hidden;">
-            <img src="./charts/review-qr.png" alt="Google Review QR" style="width:100%;height:100%;object-fit:cover;border-radius:8px;" onerror="this.style.display='none'">
+            <img src="../charts/review-qr.png" alt="Google Review QR" style="width:100%;height:100%;object-fit:cover;border-radius:8px;" onerror="this.style.display='none'">
           </div>
           <p style="font-size:12px; color:var(--grey); margin-top:10px;">Add your Google Review QR code here</p>
         </div>
@@ -1361,73 +1478,88 @@ const categoryData = {
     tag: 'Car Interior', title: 'Car Interior',
     subtitle: 'Premium seat covers, floor mats, steering wheel covers & more for every car model.',
     items: [
-      { name: 'Premium Seat Covers', meta: 'Leather & Fabric', placeholder: '🪑' },
-      { name: 'Floor Mats & Carpets', meta: '3D & Regular Fit', placeholder: '🧹' },
-      { name: 'Steering Wheel Covers', meta: 'Multiple Designs', placeholder: '🎛️' },
-      { name: 'Dashboard Covers', meta: 'Anti-UV Protection', placeholder: '🛡️' },
-      { name: 'Car Curtains', meta: 'Custom Fit', placeholder: '🪟' },
-      { name: 'Gear & Handbrake Covers', meta: 'Leather Finish', placeholder: '⚙️' },
-    ]
+  { name: 'Premium Seat Covers', meta: 'Leather & Fabric', img: '../images/modal_seatcover.png' },
+  { name: 'Floor Mats & Carpets', meta: '3D & Regular Fit', img: '../images/modal_floor_mats.png' },
+  { name: 'Steering Wheel Covers', meta: 'Multiple Designs', img: '../images/modal_steering_wheel_cover.png' },
+  { name: 'Dashboard Covers', meta: 'Anti-UV Protection', img: '../images/modal_dashboard_covers.png' },
+  { name: 'Car Curtains', meta: 'Custom Fit', img: '../images/modal_curtains.png' },
+  { name: 'Gear & Handbrake Covers', meta: 'Leather Finish', img: '../images/modal_gearknob.png' }
+]
   },
   exterior: {
     tag: 'Car Exterior', title: 'Car Exterior',
     subtitle: 'LED lights, body kits, alloy wheels & exterior styling for your car.',
     items: [
-      { name: 'LED Fog Lights', meta: 'Universal & Car-Specific', placeholder: '💡' },
-      { name: 'Body Side Moulding', meta: 'Scratch Protection', placeholder: '🎨' },
-      { name: 'Chrome Garnish', meta: 'All Popular Models', placeholder: '✨' },
-      { name: 'Roof Rails', meta: 'SUV & Hatchback', placeholder: '🚙' },
-      { name: 'Alloy Wheel Covers', meta: '13" to 17"', placeholder: '⭕' },
-      { name: 'Door Visors', meta: 'Rain Guards', placeholder: '🌧️' },
-    ]
+  { name: 'LED Fog Lights', meta: 'Universal & Car-Specific', img: '../images/exterior_foglight.png' },
+  { name: 'Body Side Moulding', meta: 'Scratch Protection', img: '../images/exterior_sidemoulding.png' },
+  { name: 'Chrome Garnish', meta: 'All Popular Models', img: '../images/exterior_chromegarnish.png' },
+  { name: 'Roof Rails', meta: 'SUV & Hatchback', img: '../images/exterior_roofrails.png' },
+  { name: 'Alloy Wheel Covers', meta: '13" to 17"', img: '../images/exterior_wheelcover.png' },
+  { name: 'Door Visors', meta: 'Rain Guards', img: '../images/exterior_doorvisor.png' }
+]
   },
   audio: {
     tag: 'Car Audio', title: 'Android Music Systems',
     subtitle: 'Android head units, speakers, amplifiers & complete audio upgrades.',
     items: [
-      { name: 'Android Head Units', meta: 'CarPlay & Android Auto', placeholder: '📺' },
-      { name: '2-DIN Music Systems', meta: 'Bluetooth + USB', placeholder: '📻' },
-      { name: 'Car Speakers', meta: '4" to 6×9"', placeholder: '🔊' },
-      { name: 'Subwoofers', meta: '8" to 12"', placeholder: '💥' },
-      { name: 'Amplifiers', meta: '2 & 4 Channel', placeholder: '📡' },
-      { name: 'Speaker Enclosures', meta: 'Custom Fit Boxes', placeholder: '📦' },
-    ]
+  { name: 'Android Head Units', meta: 'CarPlay & Android Auto', img: '../images/audio_android.png' },
+  { name: '2-DIN Music Systems', meta: 'Bluetooth + USB', img: '../images/audio_musicsystem.png' },
+  { name: 'Car Speakers', meta: '4" to 6x9"', img: '../images/audio_carspeaker.png' },
+  { name: 'Subwoofers', meta: '8" to 12"', img: '../images/audio_subwoofer.png' },
+  { name: 'Amplifiers', meta: '2 & 4 Channel', img: '../images/audio_amplifier.png' },
+  { name: 'Speaker Enclosures', meta: 'Custom Fit Boxes', img: '../images/audio_enclosurebox.png' }
+]
   },
   dash: {
     tag: 'Dash Cameras', title: 'Dash Cameras',
     subtitle: 'Front, rear & 360° dash cams — hidden professional installation included.',
     items: [
-      { name: 'Front Dash Camera', meta: 'Full HD 1080p', placeholder: '📷' },
-      { name: 'Front + Rear Combo', meta: 'Dual Channel', placeholder: '🎥' },
-      { name: '360° Dash Camera', meta: 'All-Round Coverage', placeholder: '🔄' },
-      { name: 'Parking Mode Cams', meta: 'Records When Parked', placeholder: '🅿️' },
-      { name: '4K Ultra HD Cameras', meta: 'Night Vision', placeholder: '🌙' },
-      { name: 'GPS Dash Cameras', meta: 'Route Tracking', placeholder: '🗺️' },
-    ]
+  { name: 'Front Dash Camera', meta: 'Full HD 1080p', img: '../images/cam_frontdash.png' },
+
+  { name: 'Front + Rear Combo', meta: 'Dual Channel', img: '../images/cam_front+rear.png' },
+
+  { name: '360° Dash Camera', meta: 'All-Round Coverage', img: '../images/cam_360dash.png' },
+
+  { name: 'Parking Mode Cams', meta: 'Records When Parked', img: '../images/cam_parking.png' },
+
+  { name: '4K Ultra HD Cameras', meta: 'Night Vision', img: '../images/cam_4kultrahd.png' },
+
+  { name: 'GPS Dash Cameras', meta: 'Route Tracking', img: '../images/cam_gpsdash.png' }
+]
   },
   cctv: {
     tag: 'CCTV & Security', title: 'CCTV & Security',
     subtitle: 'Complete surveillance solutions for homes, shops, offices & warehouses.',
     items: [
-      { name: 'IP CCTV Cameras', meta: 'Indoor & Outdoor', placeholder: '👁️' },
-      { name: 'Bullet Cameras', meta: 'Long Range', placeholder: '🔫' },
-      { name: 'Dome Cameras', meta: 'Ceiling Mount', placeholder: '🔵' },
-      { name: 'DVR / NVR Packages', meta: '4 to 16 Channel', placeholder: '🖥️' },
-      { name: 'Video Doorbells', meta: 'Smart & Wireless', placeholder: '🔔' },
-      { name: 'Shop Alarm Systems', meta: 'Motion + Siren', placeholder: '🚨' },
-    ]
+  { name: 'IP CCTV Cameras', meta: 'Indoor & Outdoor', img: '../images/cctv_ip.png' },
+
+  { name: 'Bullet Cameras', meta: 'Long Range', img: '../images/cctv_bullet.png' },
+
+  { name: 'Dome Cameras', meta: 'Ceiling Mount', img: '../images/cctv_dom.png' },
+
+  { name: 'DVR / NVR Packages', meta: '4 to 16 Channel', img: '../images/cctv_nvrdvr.png' },
+
+  { name: 'Video Doorbells', meta: 'Smart & Wireless', img: '../images/cctv_videodoorbell.png' },
+
+  { name: 'Shop Alarm Systems', meta: 'Motion + Siren', img: '../images/cctv_shopalarm.png' }
+]
   },
   electronics: {
     tag: 'Car Electronics', title: 'Car Electronics',
     subtitle: 'Parking sensors, GPS trackers, inverters & smart electronics for your vehicle.',
     items: [
-      { name: 'Reverse Parking Sensors', meta: '4 & 8 Sensor Systems', placeholder: '📡' },
-      { name: 'Reverse Cameras', meta: 'Night Vision', placeholder: '🔙' },
-      { name: 'GPS Vehicle Trackers', meta: 'Real-Time Tracking', placeholder: '📍' },
-      { name: 'Car Inverters', meta: '150W to 1000W', placeholder: '🔋' },
-      { name: 'USB & Type-C Chargers', meta: 'Fast Charging', placeholder: '⚡' },
-      { name: 'Central Locking Systems', meta: 'Remote & Smart', placeholder: '🔑' },
-    ]
+  { name: 'Reverse Parking Sensors', meta: '4 & 8 Sensor Systems', img: '../images/car_reversesensor.png' },
+
+  { name: 'Reverse Cameras', meta: 'Night Vision', img: '../images/car_reverse.png' },
+
+  { name: 'GPS Vehicle Trackers', meta: 'Real-Time Tracking', img: '../images/car_gps.png' },
+
+  { name: 'Car Inverters', meta: '150W to 1000W', img: '../images/car_inverters.png' },
+
+  { name: 'USB & Type-C Chargers', meta: 'Fast Charging', img: '../images/car_charger.png' },
+
+  { name: 'Central Locking Systems', meta: 'Remote & Smart', img: '../images/car_centrallock.png' }
+]
   }
 };
 

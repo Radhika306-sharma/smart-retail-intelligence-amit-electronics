@@ -36,12 +36,10 @@
     line-height: 1.6;
   }
 
-  /* ---- SCROLLBAR ---- */
   ::-webkit-scrollbar { width: 5px; }
   ::-webkit-scrollbar-track { background: var(--dark); }
   ::-webkit-scrollbar-thumb { background: var(--blue); border-radius: 4px; }
 
-  /* ---- UTILITY ---- */
   .section { padding: 80px 20px; max-width: 1100px; margin: 0 auto; }
   .tag {
     display: inline-block;
@@ -77,7 +75,7 @@
     background: linear-gradient(90deg, transparent, var(--border), transparent);
   }
 
-  /* ---- NAV ---- */
+  /* NAV */
   nav {
     position: fixed; top: 0; left: 0; right: 0; z-index: 999;
     background: rgba(8,11,16,0.85);
@@ -87,440 +85,613 @@
     display: flex; align-items: center; justify-content: space-between;
     height: 64px;
   }
-  .nav-logo {
-    display: flex; flex-direction: column; line-height: 1.1;
-  }
-  .nav-logo span:first-child {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 20px; letter-spacing: 2px; color: var(--white);
-  }
-  .nav-logo span:last-child {
-    font-size: 10px; letter-spacing: 3px; color: var(--blue-bright);
-    text-transform: uppercase; font-family: 'Space Mono', monospace;
-  }
+  .nav-logo { display: flex; flex-direction: column; line-height: 1.1; }
+  .nav-logo span:first-child { font-family: 'Bebas Neue', sans-serif; font-size: 20px; letter-spacing: 2px; color: var(--white); }
+  .nav-logo span:last-child { font-size: 10px; letter-spacing: 3px; color: var(--blue-bright); text-transform: uppercase; font-family: 'Space Mono', monospace; }
   .nav-links { display: flex; gap: 28px; list-style: none; }
-  .nav-links a {
-    color: var(--grey); text-decoration: none; font-size: 14px;
-    font-weight: 500; letter-spacing: 0.5px;
-    transition: color 0.2s;
-  }
+  .nav-links a { color: var(--grey); text-decoration: none; font-size: 14px; font-weight: 500; letter-spacing: 0.5px; transition: color 0.2s; }
   .nav-links a:hover { color: var(--blue-bright); }
-  .nav-cta {
-    background: var(--blue); color: #fff;
-    border: none; border-radius: 8px;
-    padding: 9px 20px; font-size: 13px; font-weight: 600;
-    cursor: pointer; font-family: 'Outfit', sans-serif;
-    text-decoration: none; display: inline-block;
-    transition: background 0.2s, transform 0.15s;
-  }
+  .nav-cta { background: var(--blue); color: #fff; border: none; border-radius: 8px; padding: 9px 20px; font-size: 13px; font-weight: 600; cursor: pointer; font-family: 'Outfit', sans-serif; text-decoration: none; display: inline-block; transition: background 0.2s, transform 0.15s; }
   .nav-cta:hover { background: var(--blue-bright); transform: translateY(-1px); }
   .nav-mobile-btn { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
   .nav-mobile-btn span { display: block; width: 24px; height: 2px; background: var(--white); border-radius: 2px; transition: 0.3s; }
   .mobile-menu { display: none; }
 
-  /* ---- HERO ---- */
-  #hero {
-    min-height: 100vh;
-    display: flex; align-items: center;
-    position: relative; overflow: hidden;
-    padding: 100px 20px 60px;
-  }
-  .hero-bg {
-    position: absolute; inset: 0; z-index: 0;
-    background: 
-      radial-gradient(ellipse 70% 60% at 70% 40%, rgba(30,144,255,0.10) 0%, transparent 70%),
-      radial-gradient(ellipse 40% 50% at 20% 70%, rgba(30,144,255,0.06) 0%, transparent 60%),
-      var(--black);
-  }
-  .hero-grid {
-    position: absolute; inset: 0; z-index: 0;
-    background-image:
-      linear-gradient(rgba(30,144,255,0.04) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(30,144,255,0.04) 1px, transparent 1px);
-    background-size: 50px 50px;
-    mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 30%, transparent 100%);
-  }
-  .hero-inner {
-    position: relative; z-index: 2;
-    max-width: 1100px; margin: 0 auto; width: 100%;
-    display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;
-  }
-  .hero-badge {
-    display: inline-flex; align-items: center; gap: 8px;
-    background: var(--blue-dim);
-    border: 1px solid var(--border);
-    border-radius: 50px;
-    padding: 7px 16px; margin-bottom: 24px;
-    font-size: 12px; letter-spacing: 1.5px;
-    text-transform: uppercase; font-family: 'Space Mono', monospace;
-    color: var(--blue-bright);
-  }
+  /* HERO */
+  #hero { min-height: 100vh; display: flex; align-items: center; position: relative; overflow: hidden; padding: 100px 20px 60px; }
+  .hero-bg { position: absolute; inset: 0; z-index: 0; background: radial-gradient(ellipse 70% 60% at 70% 40%, rgba(30,144,255,0.10) 0%, transparent 70%), radial-gradient(ellipse 40% 50% at 20% 70%, rgba(30,144,255,0.06) 0%, transparent 60%), var(--black); }
+  .hero-grid { position: absolute; inset: 0; z-index: 0; background-image: linear-gradient(rgba(30,144,255,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(30,144,255,0.04) 1px, transparent 1px); background-size: 50px 50px; mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 30%, transparent 100%); }
+  .hero-inner { position: relative; z-index: 2; max-width: 1100px; margin: 0 auto; width: 100%; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+  .hero-badge { display: inline-flex; align-items: center; gap: 8px; background: var(--blue-dim); border: 1px solid var(--border); border-radius: 50px; padding: 7px 16px; margin-bottom: 24px; font-size: 12px; letter-spacing: 1.5px; text-transform: uppercase; font-family: 'Space Mono', monospace; color: var(--blue-bright); }
   .hero-badge::before { content: '●'; color: var(--gold); font-size: 10px; }
-  .hero-title {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: clamp(52px, 9vw, 96px);
-    letter-spacing: 2px; line-height: 0.95;
-    margin-bottom: 12px;
-  }
+  .hero-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(52px, 9vw, 96px); letter-spacing: 2px; line-height: 0.95; margin-bottom: 12px; }
   .hero-title .line2 { color: var(--blue-bright); }
-  .hero-slogan {
-    font-size: 13px; letter-spacing: 3px; text-transform: uppercase;
-    color: var(--gold); font-family: 'Space Mono', monospace;
-    margin-bottom: 20px;
-  }
-  .hero-desc {
-    color: var(--light); font-size: 16px; line-height: 1.8;
-    max-width: 480px; margin-bottom: 36px;
-  }
+  .hero-slogan { font-size: 13px; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); font-family: 'Space Mono', monospace; margin-bottom: 20px; }
+  .hero-desc { color: var(--light); font-size: 16px; line-height: 1.8; max-width: 480px; margin-bottom: 36px; }
   .hero-btns { display: flex; gap: 14px; flex-wrap: wrap; }
-  .btn-primary {
-    background: var(--blue); color: #fff;
-    border: none; border-radius: 10px;
-    padding: 14px 28px; font-size: 15px; font-weight: 600;
-    cursor: pointer; font-family: 'Outfit', sans-serif;
-    text-decoration: none; display: inline-flex; align-items: center; gap: 8px;
-    transition: all 0.2s; box-shadow: 0 0 24px rgba(30,144,255,0.3);
-  }
+  .btn-primary { background: var(--blue); color: #fff; border: none; border-radius: 10px; padding: 14px 28px; font-size: 15px; font-weight: 600; cursor: pointer; font-family: 'Outfit', sans-serif; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; transition: all 0.2s; box-shadow: 0 0 24px rgba(30,144,255,0.3); }
   .btn-primary:hover { background: var(--blue-bright); transform: translateY(-2px); box-shadow: 0 0 36px rgba(30,144,255,0.5); }
-  .btn-outline {
-    background: transparent; color: var(--white);
-    border: 1px solid var(--border); border-radius: 10px;
-    padding: 14px 28px; font-size: 15px; font-weight: 500;
-    cursor: pointer; font-family: 'Outfit', sans-serif;
-    text-decoration: none; display: inline-flex; align-items: center; gap: 8px;
-    transition: all 0.2s;
-  }
+  .btn-outline { background: transparent; color: var(--white); border: 1px solid var(--border); border-radius: 10px; padding: 14px 28px; font-size: 15px; font-weight: 500; cursor: pointer; font-family: 'Outfit', sans-serif; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; transition: all 0.2s; }
   .btn-outline:hover { border-color: var(--blue); color: var(--blue-bright); }
   .hero-right { display: flex; flex-direction: column; gap: 16px; }
   .hero-stat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-  .hero-stat {
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    padding: 24px 20px;
-    text-align: center;
-    position: relative; overflow: hidden;
-    transition: transform 0.2s, border-color 0.2s;
-  }
+  .hero-stat { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 24px 20px; text-align: center; position: relative; overflow: hidden; transition: transform 0.2s, border-color 0.2s; }
   .hero-stat:hover { transform: translateY(-3px); border-color: var(--blue); }
-  .hero-stat::before {
-    content: ''; position: absolute; inset: 0;
-    background: linear-gradient(135deg, var(--blue-dim), transparent);
-    opacity: 0; transition: opacity 0.2s;
-  }
+  .hero-stat::before { content: ''; position: absolute; inset: 0; background: linear-gradient(135deg, var(--blue-dim), transparent); opacity: 0; transition: opacity 0.2s; }
   .hero-stat:hover::before { opacity: 1; }
-  .stat-num {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 44px; color: var(--blue-bright);
-    line-height: 1;
-  }
+  .stat-num { font-family: 'Bebas Neue', sans-serif; font-size: 44px; color: var(--blue-bright); line-height: 1; }
   .stat-label { font-size: 12px; color: var(--grey); letter-spacing: 1px; text-transform: uppercase; margin-top: 4px; }
-  .hero-trust {
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    padding: 20px;
-    display: flex; align-items: center; gap: 16px;
-  }
+  .hero-trust { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px; display: flex; align-items: center; gap: 16px; }
   .trust-icon { font-size: 28px; }
   .trust-text p:first-child { font-weight: 600; font-size: 15px; }
   .trust-text p:last-child { font-size: 13px; color: var(--grey); }
 
-  /* ---- TICKER ---- */
-  .ticker-wrap {
-    background: var(--blue);
-    padding: 12px 0;
-    overflow: hidden;
-    white-space: nowrap;
-  }
-  .ticker-inner {
-    display: inline-block;
-    animation: ticker 22s linear infinite;
-    font-family: 'Space Mono', monospace;
-    font-size: 12px; letter-spacing: 2px;
-    text-transform: uppercase; color: #fff;
-  }
+  /* TICKER */
+  .ticker-wrap { background: var(--blue); padding: 12px 0; overflow: hidden; white-space: nowrap; }
+  .ticker-inner { display: inline-block; animation: ticker 22s linear infinite; font-family: 'Space Mono', monospace; font-size: 12px; letter-spacing: 2px; text-transform: uppercase; color: #fff; }
   .ticker-inner span { margin: 0 36px; }
   .ticker-sep { color: rgba(255,255,255,0.4); }
   @keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 
-  /* ---- ABOUT ---- */
+  /* ABOUT */
   #about { background: var(--dark); }
-  .about-inner {
-    display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;
-  }
-  .about-visual {
-    position: relative; border-radius: var(--radius-lg); overflow: hidden;
-  }
-  .about-card-main {
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: var(--radius-lg);
-    padding: 40px 36px;
-    position: relative; overflow: hidden;
-  }
-  .about-card-main::after {
-    content: '1988';
-    position: absolute; right: -10px; bottom: -20px;
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 120px; color: rgba(30,144,255,0.05);
-    line-height: 1; pointer-events: none;
-  }
-  .est-line {
-    font-family: 'Space Mono', monospace;
-    font-size: 11px; letter-spacing: 3px; color: var(--gold);
-    text-transform: uppercase; margin-bottom: 16px;
-  }
-  .about-headline {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 42px; letter-spacing: 2px; line-height: 1;
-    margin-bottom: 20px;
-  }
+  .about-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+  .about-visual { position: relative; border-radius: var(--radius-lg); overflow: hidden; }
+  .about-card-main { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 40px 36px; position: relative; overflow: hidden; }
+  .about-card-main::after { content: '1988'; position: absolute; right: -10px; bottom: -20px; font-family: 'Bebas Neue', sans-serif; font-size: 120px; color: rgba(30,144,255,0.05); line-height: 1; pointer-events: none; }
+  .est-line { font-family: 'Space Mono', monospace; font-size: 11px; letter-spacing: 3px; color: var(--gold); text-transform: uppercase; margin-bottom: 16px; }
+  .about-headline { font-family: 'Bebas Neue', sans-serif; font-size: 42px; letter-spacing: 2px; line-height: 1; margin-bottom: 20px; }
   .about-text { color: var(--light); font-size: 15px; line-height: 1.8; margin-bottom: 24px; }
   .about-pills { display: flex; flex-wrap: wrap; gap: 10px; }
-  .pill {
-    background: var(--blue-dim);
-    border: 1px solid var(--border);
-    border-radius: 50px;
-    padding: 7px 16px; font-size: 13px; color: var(--blue-bright); font-weight: 500;
-  }
-  .owner-card {
-    background: var(--card2);
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    padding: 20px; margin-top: 16px;
-    display: flex; align-items: center; gap: 16px;
-  }
-  .owner-avatar {
-    width: 52px; height: 52px; border-radius: 50%;
-    background: linear-gradient(135deg, var(--blue), #0055bb);
-    display: flex; align-items: center; justify-content: center;
-    font-family: 'Bebas Neue', sans-serif; font-size: 22px; flex-shrink: 0;
-  }
+  .pill { background: var(--blue-dim); border: 1px solid var(--border); border-radius: 50px; padding: 7px 16px; font-size: 13px; color: var(--blue-bright); font-weight: 500; }
+  .owner-card { background: var(--card2); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px; margin-top: 16px; display: flex; align-items: center; gap: 16px; }
+  .owner-avatar { width: 52px; height: 52px; border-radius: 50%; background: linear-gradient(135deg, var(--blue), #0055bb); display: flex; align-items: center; justify-content: center; font-family: 'Bebas Neue', sans-serif; font-size: 22px; flex-shrink: 0; }
   .owner-name { font-weight: 700; font-size: 16px; }
   .owner-title { font-size: 13px; color: var(--grey); }
 
-  /* ---- SERVICES ---- */
+  /* SERVICES */
   #services { background: var(--black); }
   .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 48px; }
-  .service-card {
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: var(--radius-lg);
-    padding: 28px 24px;
-    cursor: default;
-    transition: transform 0.25s, border-color 0.25s, box-shadow 0.25s;
-    position: relative; overflow: hidden;
-  }
-  .service-card::before {
-    content: ''; position: absolute;
-    top: 0; left: 0; right: 0; height: 3px;
-    background: linear-gradient(90deg, var(--blue), var(--blue-bright));
-    opacity: 0; transition: opacity 0.25s;
-    border-radius: var(--radius-lg) var(--radius-lg) 0 0;
-  }
+  .service-card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 28px 24px; cursor: default; transition: transform 0.25s, border-color 0.25s, box-shadow 0.25s; position: relative; overflow: hidden; }
+  .service-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--blue), var(--blue-bright)); opacity: 0; transition: opacity 0.25s; border-radius: var(--radius-lg) var(--radius-lg) 0 0; }
   .service-card:hover { transform: translateY(-5px); border-color: rgba(30,144,255,0.4); box-shadow: 0 12px 40px rgba(30,144,255,0.12); }
   .service-card:hover::before { opacity: 1; }
   .service-icon { font-size: 36px; margin-bottom: 16px; }
   .service-name { font-size: 17px; font-weight: 700; margin-bottom: 8px; }
   .service-desc { font-size: 14px; color: var(--grey); line-height: 1.7; }
-  .service-badge {
-    display: inline-block; margin-top: 14px;
-    background: var(--blue-dim); color: var(--blue-bright);
-    font-size: 11px; letter-spacing: 1px; text-transform: uppercase;
-    padding: 4px 10px; border-radius: 50px;
-    font-family: 'Space Mono', monospace;
-  }
+  .service-badge { display: inline-block; margin-top: 14px; background: var(--blue-dim); color: var(--blue-bright); font-size: 11px; letter-spacing: 1px; text-transform: uppercase; padding: 4px 10px; border-radius: 50px; font-family: 'Space Mono', monospace; }
 
-  /* ---- WHY US ---- */
+  /* WHY US */
   #whyus { background: var(--dark); }
   .why-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; margin-top: 0; }
   .why-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 40px; }
-  .why-card {
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    padding: 22px 20px;
-    transition: border-color 0.2s, transform 0.2s;
-  }
+  .why-card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 22px 20px; transition: border-color 0.2s, transform 0.2s; }
   .why-card:hover { border-color: var(--blue); transform: translateY(-2px); }
-  .why-num {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 32px; color: var(--blue-bright); line-height: 1;
-    margin-bottom: 8px;
-  }
+  .why-num { font-family: 'Bebas Neue', sans-serif; font-size: 32px; color: var(--blue-bright); line-height: 1; margin-bottom: 8px; }
   .why-title { font-weight: 700; font-size: 15px; margin-bottom: 6px; }
   .why-text { font-size: 13px; color: var(--grey); line-height: 1.6; }
-  .why-visual {
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: var(--radius-lg);
-    padding: 36px;
-    text-align: center; position: relative; overflow: hidden;
-  }
-  .why-visual::before {
-    content: '';
-    position: absolute; top: -40px; right: -40px;
-    width: 180px; height: 180px; border-radius: 50%;
-    background: var(--blue-glow); filter: blur(40px);
-  }
-  .big-year {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 100px; line-height: 1;
-    background: linear-gradient(135deg, var(--blue-bright), var(--blue));
-    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-    background-clip: text;
-    margin-bottom: 8px;
-  }
+  .why-visual { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 36px; text-align: center; position: relative; overflow: hidden; }
+  .why-visual::before { content: ''; position: absolute; top: -40px; right: -40px; width: 180px; height: 180px; border-radius: 50%; background: var(--blue-glow); filter: blur(40px); }
+  .big-year { font-family: 'Bebas Neue', sans-serif; font-size: 100px; line-height: 1; background: linear-gradient(135deg, var(--blue-bright), var(--blue)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 8px; }
   .big-year-label { font-size: 13px; letter-spacing: 3px; text-transform: uppercase; color: var(--grey); font-family: 'Space Mono', monospace; }
   .trust-list { margin-top: 28px; display: flex; flex-direction: column; gap: 12px; text-align: left; }
   .trust-item { display: flex; align-items: center; gap: 12px; }
   .trust-check { color: var(--blue-bright); font-size: 16px; flex-shrink: 0; }
   .trust-item-text { font-size: 15px; color: var(--light); }
 
-  /* ---- GALLERY ---- */
+  /* GALLERY */
   #gallery { background: var(--black); }
   .filter-bar { display: flex; flex-wrap: wrap; gap: 10px; margin: 36px 0 28px; }
-  .filter-btn {
-    background: var(--card); border: 1px solid var(--border);
-    color: var(--grey); border-radius: 50px;
-    padding: 9px 20px; font-size: 13px; font-weight: 500;
-    cursor: pointer; font-family: 'Outfit', sans-serif;
-    transition: all 0.2s;
-  }
-  .filter-btn:hover, .filter-btn.active {
-    background: var(--blue); border-color: var(--blue); color: #fff;
-  }
+  .filter-btn { background: var(--card); border: 1px solid var(--border); color: var(--grey); border-radius: 50px; padding: 9px 20px; font-size: 13px; font-weight: 500; cursor: pointer; font-family: 'Outfit', sans-serif; transition: all 0.2s; }
+  .filter-btn:hover, .filter-btn.active { background: var(--blue); border-color: var(--blue); color: #fff; }
   .gallery-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
-  .gallery-item {
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    overflow: hidden;
-    transition: transform 0.25s, box-shadow 0.25s;
-    cursor: pointer;
-  }
+  .gallery-item { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; transition: transform 0.25s, box-shadow 0.25s; cursor: pointer; }
   .gallery-item:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(30,144,255,0.15); }
   .gallery-item.hidden { display: none; }
-  .gallery-thumb {
-    height: 160px;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 52px;
-    background: linear-gradient(135deg, var(--card2), var(--dark));
-    border-bottom: 1px solid var(--border);
-  }
+  .gallery-thumb { height: 160px; display: flex; align-items: center; justify-content: center; font-size: 52px; background: linear-gradient(135deg, var(--card2), var(--dark)); border-bottom: 1px solid var(--border); }
   .gallery-info { padding: 16px; }
   .gallery-name { font-weight: 600; font-size: 15px; margin-bottom: 4px; }
-  .gallery-cat {
-    font-size: 11px; letter-spacing: 1px; text-transform: uppercase;
-    color: var(--blue-bright); font-family: 'Space Mono', monospace;
-  }
+  .gallery-cat { font-size: 11px; letter-spacing: 1px; text-transform: uppercase; color: var(--blue-bright); font-family: 'Space Mono', monospace; }
+  .gallery-view-hint { font-size: 12px; color: var(--blue-bright); margin-top: 8px; font-family: 'Space Mono', monospace; letter-spacing: 0.5px; opacity: 0; transform: translateX(-4px); transition: opacity 0.2s, transform 0.2s; }
+  .gallery-item:hover .gallery-view-hint { opacity: 1; transform: translateX(0); }
 
-  /* ---- REVIEWS ---- */
+  /* MODAL */
+  .modal-overlay { display: none; position: fixed; inset: 0; z-index: 1000; background: rgba(5,8,14,0.88); backdrop-filter: blur(10px); padding: 20px; overflow-y: auto; align-items: flex-start; justify-content: center; }
+  .modal-overlay.open { display: flex; animation: modalFadeIn 0.25s ease forwards; }
+  @keyframes modalFadeIn { from { opacity: 0; } to { opacity: 1; } }
+  .modal-box { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius-lg); width: 100%; max-width: 900px; margin: auto; padding: 36px 32px; animation: modalSlideUp 0.3s ease forwards; position: relative; }
+  @keyframes modalSlideUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+  .modal-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 28px; gap: 16px; }
+  .modal-title { font-family: 'Bebas Neue', sans-serif; font-size: 40px; letter-spacing: 2px; line-height: 1; color: var(--white); }
+  .modal-subtitle { font-size: 14px; color: var(--grey); margin-top: 6px; }
+  .modal-close { background: var(--card2); border: 1px solid var(--border); color: var(--white); width: 40px; height: 40px; border-radius: 50%; font-size: 16px; cursor: pointer; flex-shrink: 0; display: flex; align-items: center; justify-content: center; transition: background 0.2s, border-color 0.2s; }
+  .modal-close:hover { background: var(--blue-dim); border-color: var(--blue); }
+  .modal-photo-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  .modal-photo-item { background: var(--card2); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; transition: transform 0.2s, border-color 0.2s; }
+  .modal-photo-item:hover { transform: translateY(-3px); border-color: var(--blue); }
+  .modal-photo-thumb { width: 100%; aspect-ratio: 4/3; object-fit: cover; display: block; background: var(--dark); }
+  .modal-photo-placeholder { width: 100%; aspect-ratio: 4/3; background: linear-gradient(135deg, var(--dark), var(--card2)); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; font-size: 36px; border-bottom: 1px solid var(--border); }
+  .modal-photo-label { padding: 12px 14px; }
+  .modal-photo-name { font-size: 14px; font-weight: 600; color: var(--white); margin-bottom: 2px; }
+  .modal-photo-meta { font-size: 11px; color: var(--grey); font-family: 'Space Mono', monospace; letter-spacing: 0.5px; }
+
+  /* REVIEWS */
   #reviews { background: var(--dark); }
   .reviews-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 48px; }
-  .review-card {
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: var(--radius-lg);
-    padding: 28px 24px;
-    transition: transform 0.2s, border-color 0.2s;
-  }
+  .review-card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 28px 24px; transition: transform 0.2s, border-color 0.2s; }
   .review-card:hover { transform: translateY(-3px); border-color: rgba(30,144,255,0.35); }
   .stars { color: var(--gold); font-size: 16px; letter-spacing: 2px; margin-bottom: 14px; }
   .review-text { font-size: 15px; color: var(--light); line-height: 1.75; margin-bottom: 20px; font-style: italic; }
   .reviewer { display: flex; align-items: center; gap: 12px; }
-  .reviewer-avatar {
-    width: 40px; height: 40px; border-radius: 50%;
-    background: linear-gradient(135deg, var(--blue), #003a80);
-    display: flex; align-items: center; justify-content: center;
-    font-family: 'Bebas Neue', sans-serif; font-size: 16px; flex-shrink: 0;
-  }
+  .reviewer-avatar { width: 40px; height: 40px; border-radius: 50%; background: linear-gradient(135deg, var(--blue), #003a80); display: flex; align-items: center; justify-content: center; font-family: 'Bebas Neue', sans-serif; font-size: 16px; flex-shrink: 0; }
   .reviewer-name { font-weight: 600; font-size: 14px; }
   .reviewer-meta { font-size: 12px; color: var(--grey); }
-  .google-cta {
-    display: flex; align-items: center; justify-content: center; gap: 16px;
-    margin-top: 48px; flex-wrap: wrap;
-  }
-  .google-rating-box {
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    padding: 20px 32px;
-    text-align: center;
-  }
+  .google-cta { display: flex; align-items: center; justify-content: center; gap: 16px; margin-top: 48px; flex-wrap: wrap; }
+  .google-rating-box { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px 32px; text-align: center; }
   .google-score { font-family: 'Bebas Neue', sans-serif; font-size: 56px; color: var(--blue-bright); line-height: 1; }
   .google-stars { color: var(--gold); font-size: 18px; margin: 4px 0; }
   .google-label { font-size: 12px; color: var(--grey); letter-spacing: 1px; text-transform: uppercase; font-family: 'Space Mono', monospace; }
 
-  /* ---- CONTACT ---- */
-  #contact { background: var(--black); }
-  .contact-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; margin-top: 48px; }
-  .contact-card {
+  /* ═══════════════════════════════════════════════════════════
+     AI INSIGHTS SECTION
+  ═══════════════════════════════════════════════════════════ */
+  #ai-insights { background: var(--black); }
+
+  /* Charts grid */
+  .insights-charts-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-top: 48px;
+  }
+  .insight-chart-card {
     background: var(--card);
     border: 1px solid var(--border);
     border-radius: var(--radius-lg);
-    padding: 32px 28px;
+    overflow: hidden;
+    transition: transform 0.25s, border-color 0.25s, box-shadow 0.25s;
+    position: relative;
   }
+  .insight-chart-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(30,144,255,0.45);
+    box-shadow: 0 16px 48px rgba(30,144,255,0.14);
+  }
+  .insight-chart-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--blue), var(--blue-bright));
+    border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+  }
+  .chart-img-wrap {
+    background: #fff;
+    padding: 16px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 240px;
+  }
+  .chart-img-wrap img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 6px;
+  }
+  /* Placeholder when images aren't in same folder */
+  .chart-placeholder {
+    width: 100%;
+    height: 220px;
+    background: linear-gradient(135deg, #0d1117, #161d2a);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    border-radius: 6px;
+  }
+  .chart-placeholder-icon { font-size: 48px; }
+  .chart-placeholder-label { font-family: 'Space Mono', monospace; font-size: 11px; letter-spacing: 1px; color: var(--grey); text-transform: uppercase; }
+  .chart-body { padding: 22px 20px; }
+  .chart-label {
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--blue-bright);
+    margin-bottom: 8px;
+  }
+  .chart-title { font-size: 16px; font-weight: 700; margin-bottom: 10px; color: var(--white); }
+  .chart-desc { font-size: 13px; color: var(--grey); line-height: 1.7; }
+  .chart-stat-row {
+    display: flex;
+    gap: 12px;
+    margin-top: 14px;
+    flex-wrap: wrap;
+  }
+  .chart-stat-pill {
+    background: var(--blue-dim);
+    border: 1px solid var(--border);
+    border-radius: 50px;
+    padding: 4px 12px;
+    font-size: 12px;
+    color: var(--blue-bright);
+    font-family: 'Space Mono', monospace;
+  }
+
+  /* HOW IT WORKS — 4-step workflow */
+  .workflow-section { margin-top: 72px; }
+  .workflow-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(28px, 4vw, 42px);
+    letter-spacing: 2px;
+    margin-bottom: 8px;
+  }
+  .workflow-sub { color: var(--grey); font-size: 15px; margin-bottom: 48px; }
+  .workflow-steps {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    position: relative;
+  }
+  /* Connecting line behind steps */
+  .workflow-steps::before {
+    content: '';
+    position: absolute;
+    top: 36px;
+    left: calc(12.5%);
+    right: calc(12.5%);
+    height: 2px;
+    background: linear-gradient(90deg, var(--blue), var(--blue-bright));
+    z-index: 0;
+    opacity: 0.4;
+  }
+  .workflow-step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 0 16px;
+    position: relative;
+    z-index: 1;
+  }
+  .workflow-step-num {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    background: var(--card);
+    border: 2px solid var(--blue);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    margin-bottom: 20px;
+    position: relative;
+    box-shadow: 0 0 24px rgba(30,144,255,0.2);
+    transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
+  }
+  .workflow-step:hover .workflow-step-num {
+    border-color: var(--blue-bright);
+    box-shadow: 0 0 36px rgba(30,144,255,0.4);
+    transform: scale(1.06);
+  }
+  .workflow-step-badge {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: var(--blue);
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-weight: 700;
+  }
+  .workflow-step-title { font-size: 15px; font-weight: 700; margin-bottom: 8px; color: var(--white); }
+  .workflow-step-desc { font-size: 13px; color: var(--grey); line-height: 1.6; max-width: 160px; }
+  .workflow-arrow {
+    position: absolute;
+    top: 22px;
+    right: -18px;
+    color: var(--blue-bright);
+    font-size: 20px;
+    z-index: 2;
+    opacity: 0.7;
+  }
+
+  /* Tech stack row */
+  .tech-stack-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-top: 52px;
+    padding: 24px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+  }
+  .tech-label { font-size: 12px; letter-spacing: 2px; text-transform: uppercase; color: var(--grey); font-family: 'Space Mono', monospace; margin-right: 8px; }
+  .tech-pill { background: var(--blue-dim); border: 1px solid var(--border); border-radius: 50px; padding: 6px 14px; font-size: 12px; color: var(--blue-bright); font-family: 'Space Mono', monospace; white-space: nowrap; transition: border-color 0.2s; }
+  .tech-pill:hover { border-color: var(--blue); }
+
+  /* CONTACT */
+  #contact { background: var(--black); }
+  .contact-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; margin-top: 48px; }
+  .contact-card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 32px 28px; }
   .contact-items { display: flex; flex-direction: column; gap: 20px; }
   .contact-item { display: flex; gap: 16px; align-items: flex-start; }
-  .contact-icon {
-    width: 44px; height: 44px; border-radius: 10px;
-    background: var(--blue-dim); border: 1px solid var(--border);
-    display: flex; align-items: center; justify-content: center;
-    font-size: 20px; flex-shrink: 0;
-  }
+  .contact-icon { width: 44px; height: 44px; border-radius: 10px; background: var(--blue-dim); border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; font-size: 20px; flex-shrink: 0; }
   .contact-label { font-size: 12px; color: var(--grey); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 4px; }
   .contact-value { font-size: 15px; font-weight: 600; color: var(--white); }
   .contact-value a { color: var(--white); text-decoration: none; }
   .contact-value a:hover { color: var(--blue-bright); }
-  .map-embed {
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: var(--radius-lg);
-    overflow: hidden; height: 300px;
-    display: flex; align-items: center; justify-content: center;
-    flex-direction: column; gap: 12px; color: var(--grey);
-  }
+  .map-embed { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; height: 300px; display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 12px; color: var(--grey); }
   .map-placeholder-icon { font-size: 48px; }
 
-  /* ---- FLOATING BTNS ---- */
-  .float-btns {
-    position: fixed; bottom: 24px; right: 20px; z-index: 998;
-    display: flex; flex-direction: column; gap: 12px;
-    align-items: flex-end;
-  }
-  .float-btn {
-    display: flex; align-items: center; gap: 10px;
-    border: none; border-radius: 50px;
-    padding: 13px 20px; font-size: 14px; font-weight: 700;
-    cursor: pointer; text-decoration: none;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.4);
-    transition: transform 0.2s, box-shadow 0.2s;
-    font-family: 'Outfit', sans-serif;
-  }
+  /* FLOATING BUTTONS */
+  .float-btns { position: fixed; bottom: 24px; right: 20px; z-index: 998; display: flex; flex-direction: column; gap: 12px; align-items: flex-end; }
+  .float-btn { display: flex; align-items: center; gap: 10px; border: none; border-radius: 50px; padding: 13px 20px; font-size: 14px; font-weight: 700; cursor: pointer; text-decoration: none; box-shadow: 0 4px 20px rgba(0,0,0,0.4); transition: transform 0.2s, box-shadow 0.2s; font-family: 'Outfit', sans-serif; }
   .float-btn:hover { transform: translateY(-2px) scale(1.03); }
   .float-wa { background: #25d366; color: #fff; box-shadow: 0 4px 20px rgba(37,211,102,0.35); }
   .float-call { background: var(--blue); color: #fff; box-shadow: 0 4px 20px rgba(30,144,255,0.35); }
 
-  /* ---- FOOTER ---- */
-  footer {
-    background: var(--dark);
+  /* ═══════════════════════════════════════════════════════════
+     AI CHAT WIDGET
+  ═══════════════════════════════════════════════════════════ */
+  .chat-widget {
+    position: fixed;
+    bottom: 24px;
+    left: 20px;
+    z-index: 997;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  /* Bubble toggle button */
+  .chat-toggle-btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: linear-gradient(135deg, #0a1628, #111d33);
+    border: 1px solid var(--blue);
+    border-radius: 50px;
+    padding: 13px 20px;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    color: var(--white);
+    box-shadow: 0 4px 24px rgba(30,144,255,0.3);
+    transition: all 0.2s;
+    font-family: 'Outfit', sans-serif;
+    white-space: nowrap;
+  }
+  .chat-toggle-btn:hover {
+    background: linear-gradient(135deg, #0e1f3a, #162847);
+    border-color: var(--blue-bright);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 32px rgba(30,144,255,0.4);
+  }
+  .chat-toggle-btn .chat-btn-icon { font-size: 18px; }
+  .chat-toggle-btn .chat-btn-dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: #00e676;
+    animation: pulseDot 2s ease-in-out infinite;
+    flex-shrink: 0;
+  }
+  @keyframes pulseDot {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(0,230,118,0.6); }
+    50% { box-shadow: 0 0 0 5px rgba(0,230,118,0); }
+  }
+
+  /* Chat panel */
+  .chat-panel {
+    width: 360px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    box-shadow: 0 24px 64px rgba(0,0,0,0.6), 0 0 0 1px rgba(30,144,255,0.1);
+    display: none;
+    flex-direction: column;
+    overflow: hidden;
+    animation: chatSlideUp 0.3s ease forwards;
+    max-height: 520px;
+  }
+  .chat-panel.open { display: flex; }
+  @keyframes chatSlideUp {
+    from { opacity: 0; transform: translateY(20px) scale(0.97); }
+    to   { opacity: 1; transform: translateY(0) scale(1); }
+  }
+
+  /* Chat header */
+  .chat-header {
+    background: linear-gradient(135deg, #0a1628 0%, #0e2040 100%);
+    border-bottom: 1px solid var(--border);
+    padding: 16px 18px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .chat-header-avatar {
+    width: 40px; height: 40px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--blue), #003a90);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 18px;
+    flex-shrink: 0;
+    border: 2px solid rgba(30,144,255,0.4);
+  }
+  .chat-header-info { flex: 1; }
+  .chat-header-name { font-size: 14px; font-weight: 700; color: var(--white); }
+  .chat-header-status { font-size: 11px; color: #00e676; font-family: 'Space Mono', monospace; letter-spacing: 0.5px; }
+  .chat-header-status::before { content: '● '; }
+  .chat-close-btn {
+    background: none; border: none; color: var(--grey);
+    cursor: pointer; font-size: 16px; padding: 4px;
+    transition: color 0.2s;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .chat-close-btn:hover { color: var(--white); }
+
+  /* Chat messages area */
+  .chat-messages {
+    flex: 1;
+    overflow-y: auto;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    max-height: 300px;
+    scrollbar-width: thin;
+    scrollbar-color: var(--border) transparent;
+  }
+  .chat-messages::-webkit-scrollbar { width: 4px; }
+  .chat-messages::-webkit-scrollbar-thumb { background: var(--border); border-radius: 4px; }
+
+  .chat-msg {
+    display: flex;
+    flex-direction: column;
+    max-width: 82%;
+    gap: 4px;
+  }
+  .chat-msg.user { align-self: flex-end; align-items: flex-end; }
+  .chat-msg.bot  { align-self: flex-start; align-items: flex-start; }
+  .chat-bubble {
+    padding: 10px 14px;
+    border-radius: 16px;
+    font-size: 14px;
+    line-height: 1.6;
+  }
+  .chat-msg.user .chat-bubble {
+    background: var(--blue);
+    color: #fff;
+    border-bottom-right-radius: 4px;
+  }
+  .chat-msg.bot .chat-bubble {
+    background: var(--card2);
+    border: 1px solid var(--border);
+    color: var(--light);
+    border-bottom-left-radius: 4px;
+  }
+  .chat-time { font-size: 10px; color: var(--grey); font-family: 'Space Mono', monospace; }
+
+  /* Typing indicator */
+  .typing-indicator .chat-bubble {
+    display: flex; gap: 5px; align-items: center;
+    padding: 12px 16px;
+  }
+  .typing-dot {
+    width: 7px; height: 7px;
+    border-radius: 50%;
+    background: var(--blue-bright);
+    animation: typingBounce 1.2s ease-in-out infinite;
+  }
+  .typing-dot:nth-child(2) { animation-delay: 0.2s; }
+  .typing-dot:nth-child(3) { animation-delay: 0.4s; }
+  @keyframes typingBounce {
+    0%, 100% { opacity: 0.3; transform: translateY(0); }
+    50% { opacity: 1; transform: translateY(-4px); }
+  }
+
+  /* Quick replies */
+  .quick-replies {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 0 16px 12px;
+  }
+  .quick-reply-btn {
+    background: var(--blue-dim);
+    border: 1px solid var(--border);
+    border-radius: 50px;
+    padding: 6px 12px;
+    font-size: 12px;
+    color: var(--blue-bright);
+    cursor: pointer;
+    font-family: 'Outfit', sans-serif;
+    transition: all 0.2s;
+    white-space: nowrap;
+  }
+  .quick-reply-btn:hover {
+    background: var(--blue);
+    color: #fff;
+    border-color: var(--blue);
+  }
+
+  /* Chat input */
+  .chat-input-row {
+    display: flex;
+    gap: 8px;
+    padding: 12px 16px;
     border-top: 1px solid var(--border);
-    padding: 36px 24px;
+    background: var(--card);
+    align-items: flex-end;
+  }
+  .chat-input {
+    flex: 1;
+    background: var(--card2);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 10px 14px;
+    font-size: 14px;
+    color: var(--white);
+    font-family: 'Outfit', sans-serif;
+    resize: none;
+    outline: none;
+    line-height: 1.5;
+    max-height: 100px;
+    overflow-y: auto;
+    transition: border-color 0.2s;
+  }
+  .chat-input::placeholder { color: var(--grey); }
+  .chat-input:focus { border-color: var(--blue); }
+  .chat-send-btn {
+    width: 40px; height: 40px;
+    border-radius: 50%;
+    background: var(--blue);
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    font-size: 16px;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+    transition: all 0.2s;
+    box-shadow: 0 4px 12px rgba(30,144,255,0.3);
+  }
+  .chat-send-btn:hover:not(:disabled) { background: var(--blue-bright); transform: scale(1.08); }
+  .chat-send-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+
+  /* Error banner inside chat */
+  .chat-error {
+    font-size: 12px;
+    color: #ff6b6b;
+    background: rgba(255,107,107,0.08);
+    border: 1px solid rgba(255,107,107,0.2);
+    border-radius: 8px;
+    padding: 8px 12px;
     text-align: center;
   }
-  .footer-logo {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 26px; letter-spacing: 3px; margin-bottom: 8px;
-  }
+
+  /* FOOTER */
+  footer { background: var(--dark); border-top: 1px solid var(--border); padding: 36px 24px; text-align: center; }
+  .footer-logo { font-family: 'Bebas Neue', sans-serif; font-size: 26px; letter-spacing: 3px; margin-bottom: 8px; }
   .footer-slogan { font-size: 12px; letter-spacing: 3px; color: var(--gold); text-transform: uppercase; font-family: 'Space Mono', monospace; margin-bottom: 16px; }
   .footer-links { display: flex; justify-content: center; gap: 24px; flex-wrap: wrap; margin-bottom: 16px; }
   .footer-links a { color: var(--grey); text-decoration: none; font-size: 13px; transition: color 0.2s; }
   .footer-links a:hover { color: var(--blue-bright); }
   .footer-copy { font-size: 12px; color: var(--grey); }
 
-  /* ---- ANIMATIONS ---- */
+  /* ANIMATIONS */
   @keyframes fadeUp { from { opacity:0; transform:translateY(30px); } to { opacity:1; transform:translateY(0); } }
   .fade-up { animation: fadeUp 0.7s ease forwards; }
   .delay-1 { animation-delay: 0.15s; opacity:0; }
@@ -528,20 +699,12 @@
   .delay-3 { animation-delay: 0.45s; opacity:0; }
   .delay-4 { animation-delay: 0.6s; opacity:0; }
 
-  /* ---- MOBILE ---- */
+  /* MOBILE */
   @media (max-width: 768px) {
     .nav-links, .nav-cta-wrap { display: none; }
     .nav-mobile-btn { display: flex; }
-    .mobile-menu.open {
-      display: flex; flex-direction: column;
-      position: fixed; top: 64px; left: 0; right: 0;
-      background: rgba(8,11,16,0.97); backdrop-filter: blur(16px);
-      border-bottom: 1px solid var(--border);
-      padding: 24px; gap: 20px; z-index: 998;
-    }
-    .mobile-menu.open a {
-      color: var(--white); text-decoration: none; font-size: 18px; font-weight: 600;
-    }
+    .mobile-menu.open { display: flex; flex-direction: column; position: fixed; top: 64px; left: 0; right: 0; background: rgba(8,11,16,0.97); backdrop-filter: blur(16px); border-bottom: 1px solid var(--border); padding: 24px; gap: 20px; z-index: 998; }
+    .mobile-menu.open a { color: var(--white); text-decoration: none; font-size: 18px; font-weight: 600; }
     .hero-inner { grid-template-columns: 1fr; gap: 40px; }
     .hero-right { order: -1; }
     .hero-stat-grid { grid-template-columns: 1fr 1fr; }
@@ -553,178 +716,29 @@
     .float-btn span.btn-label { display: none; }
     .float-btn { padding: 14px; border-radius: 50%; width: 52px; height: 52px; justify-content: center; }
     .float-btn .icon { font-size: 20px; }
+    /* Chat widget mobile */
+    .chat-panel { width: calc(100vw - 32px); }
+    .chat-toggle-btn .btn-label { display: none; }
+    .insights-charts-grid { grid-template-columns: 1fr; }
+    .workflow-steps { grid-template-columns: 1fr 1fr; gap: 24px; }
+    .workflow-steps::before { display: none; }
+    .workflow-arrow { display: none; }
   }
   @media (max-width: 480px) {
     .services-grid { grid-template-columns: 1fr; }
     .gallery-grid { grid-template-columns: 1fr; }
     .why-grid { grid-template-columns: 1fr; }
-    .hero-stat-grid { grid-template-columns: 1fr 1fr; }
+    .workflow-steps { grid-template-columns: 1fr; }
   }
 
-  .gallery-view-hint {
-    font-size: 12px;
-    color: var(--blue-bright);
-    margin-top: 8px;
-    font-family: 'Space Mono', monospace;
-    letter-spacing: 0.5px;
-    opacity: 0;
-    transform: translateX(-4px);
-    transition: opacity 0.2s, transform 0.2s;
-  }
-  .gallery-item:hover .gallery-view-hint {
-    opacity: 1;
-    transform: translateX(0);
-  }
-  .gallery-item { cursor: pointer; }
+  .more-text { display: none; }
+  .read-more-btn { background: none; border: none; color: #3aa0ff; cursor: pointer; font-size: 14px; margin-top: 10px; padding: 0; }
 
-  /* Modal overlay */
-  .modal-overlay {
-    display: none;
-    position: fixed; inset: 0; z-index: 1000;
-    background: rgba(5, 8, 14, 0.88);
-    backdrop-filter: blur(10px);
-    padding: 20px;
-    overflow-y: auto;
-    align-items: flex-start;
-    justify-content: center;
-  }
-  .modal-overlay.open {
-    display: flex;
-    animation: modalFadeIn 0.25s ease forwards;
-  }
-  @keyframes modalFadeIn {
-    from { opacity: 0; }
-    to   { opacity: 1; }
-  }
-
-  /* Modal box */
-  .modal-box {
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: var(--radius-lg);
-    width: 100%;
-    max-width: 900px;
-    margin: auto;
-    padding: 36px 32px;
-    animation: modalSlideUp 0.3s ease forwards;
-    position: relative;
-  }
-  @keyframes modalSlideUp {
-    from { opacity: 0; transform: translateY(30px); }
-    to   { opacity: 1; transform: translateY(0); }
-  }
-
-  /* Modal header */
-  .modal-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    margin-bottom: 28px;
-    gap: 16px;
-  }
-  .modal-title {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 40px;
-    letter-spacing: 2px;
-    line-height: 1;
-    color: var(--white);
-  }
-  .modal-subtitle {
-    font-size: 14px;
-    color: var(--grey);
-    margin-top: 6px;
-  }
-  .modal-close {
-    background: var(--card2);
-    border: 1px solid var(--border);
-    color: var(--white);
-    width: 40px; height: 40px;
-    border-radius: 50%;
-    font-size: 16px;
-    cursor: pointer;
-    flex-shrink: 0;
-    display: flex; align-items: center; justify-content: center;
-    transition: background 0.2s, border-color 0.2s;
-  }
-  .modal-close:hover {
-    background: var(--blue-dim);
-    border-color: var(--blue);
-  }
-
-  /* Photo grid inside modal */
-  .modal-photo-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 16px;
-  }
-  .modal-photo-item {
-    background: var(--card2);
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    overflow: hidden;
-    transition: transform 0.2s, border-color 0.2s;
-  }
-  .modal-photo-item:hover {
-    transform: translateY(-3px);
-    border-color: var(--blue);
-  }
-  .modal-photo-thumb {
-    width: 100%;
-    aspect-ratio: 4/3;
-    object-fit: cover;
-    display: block;
-    background: var(--dark);
-  }
-  /* Placeholder shown when no real image yet */
-  .modal-photo-placeholder {
-    width: 100%;
-    aspect-ratio: 4/3;
-    background: linear-gradient(135deg, var(--dark), var(--card2));
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    font-size: 36px;
-    border-bottom: 1px solid var(--border);
-  }
-  .modal-photo-label {
-    padding: 12px 14px;
-  }
-  .modal-photo-name {
-    font-size: 14px;
-    font-weight: 600;
-    color: var(--white);
-    margin-bottom: 2px;
-  }
-  .modal-photo-meta {
-    font-size: 11px;
-    color: var(--grey);
-    font-family: 'Space Mono', monospace;
-    letter-spacing: 0.5px;
-  }
-
-  /* Mobile */
   @media (max-width: 600px) {
     .modal-box { padding: 24px 18px; }
     .modal-photo-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
     .modal-title { font-size: 30px; }
   }
-
-  .more-text{
-  display:none;
-}
-
-.read-more-btn{
-  background:none;
-  border:none;
-  color:#3aa0ff;
-  cursor:pointer;
-  font-size:14px;
-  margin-top:10px;
-  padding:0;
-}
-
 </style>
 </head>
 <body>
@@ -739,6 +753,7 @@
     <li><a href="#about">About</a></li>
     <li><a href="#services">Services</a></li>
     <li><a href="#gallery">Products</a></li>
+    <li><a href="#ai-insights">AI Insights</a></li>
     <li><a href="#reviews">Reviews</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
@@ -753,6 +768,7 @@
   <a href="#about" onclick="toggleMenu()">About</a>
   <a href="#services" onclick="toggleMenu()">Services</a>
   <a href="#gallery" onclick="toggleMenu()">Products</a>
+  <a href="#ai-insights" onclick="toggleMenu()">AI Insights</a>
   <a href="#reviews" onclick="toggleMenu()">Reviews</a>
   <a href="#contact" onclick="toggleMenu()">Contact</a>
   <a href="https://Wa.me/+919425110451" style="color: #25d366 !important;">📲 WhatsApp Us</a>
@@ -771,7 +787,7 @@
       </h1>
       <p class="hero-slogan fade-up delay-2">Trusted by Generations Since 1988</p>
       <p class="hero-desc fade-up delay-3">
-        37 years of expertise in car accessories, electronics, CCTV & security solutions. 
+        37 years of expertise in car accessories, electronics, CCTV & security solutions.
         Gwalior's original destination for premium tech installations and trusted advice.
       </p>
       <div class="hero-btns fade-up delay-4">
@@ -781,22 +797,10 @@
     </div>
     <div class="hero-right fade-up delay-2">
       <div class="hero-stat-grid">
-        <div class="hero-stat">
-          <div class="stat-num">37+</div>
-          <div class="stat-label">Years in Business</div>
-        </div>
-        <div class="hero-stat">
-          <div class="stat-num">10,000+</div>
-          <div class="stat-label">Happy Customers</div>
-        </div>
-        <div class="hero-stat">
-          <div class="stat-num">6</div>
-          <div class="stat-label">Service Categories</div>
-        </div>
-        <div class="hero-stat">
-          <div class="stat-num">1988</div>
-          <div class="stat-label">Established</div>
-        </div>
+        <div class="hero-stat"><div class="stat-num">37+</div><div class="stat-label">Years in Business</div></div>
+        <div class="hero-stat"><div class="stat-num">10,000+</div><div class="stat-label">Happy Customers</div></div>
+        <div class="hero-stat"><div class="stat-num">6</div><div class="stat-label">Service Categories</div></div>
+        <div class="hero-stat"><div class="stat-num">1988</div><div class="stat-label">Established</div></div>
       </div>
       <div class="hero-trust">
         <div class="trust-icon">⭐</div>
@@ -820,7 +824,6 @@
     <span>Car Electronics</span><span class="ticker-sep">✦</span>
     <span>Shop Security</span><span class="ticker-sep">✦</span>
     <span>Trusted Since 1988</span><span class="ticker-sep">✦</span>
-    <!-- Duplicate for seamless loop -->
     <span>Car Accessories</span><span class="ticker-sep">✦</span>
     <span>Android Music Systems</span><span class="ticker-sep">✦</span>
     <span>Dash Cameras</span><span class="ticker-sep">✦</span>
@@ -840,14 +843,8 @@
         <div class="about-card-main">
           <p class="est-line">✦ Explore Beyond the Ordinary</p>
           <h2 class="about-headline">BUILT ON<br><span class="blue">TRUST &</span><br>EXPERTISE</h2>
-          <p class="about-text">
-            What started as a small electronics shop on Jinsi Road has grown into Gwalior's most
-            recognised name for car accessories and security solutions. Three decades and counting. 
-          </p>
-          <p class="about-text">
-            We don't just sell products — we understand your vehicle, your budget,
-            and recommend what genuinely works. No upselling. No shortcuts. Just honest expertise.
-          </p>
+          <p class="about-text">What started as a small electronics shop on Jinsi Road has grown into Gwalior's most recognised name for car accessories and security solutions. Three decades and counting.</p>
+          <p class="about-text">We don't just sell products — we understand your vehicle, your budget, and recommend what genuinely works. No upselling. No shortcuts. Just honest expertise.</p>
           <div class="about-pills">
             <span class="pill">🏆 37 Years Legacy</span>
             <span class="pill">🔧 Expert Installation</span>
@@ -864,38 +861,25 @@
               <div class="owner-name">Mr. Amit Sharma</div>
               <div class="owner-title">Owner · Amit Electronics</div>
             </div>
-            
           </div>
         </div>
       </div>
       <div>
         <div class="tag">Our Story</div>
         <h2 class="section-title">WHY GWALIOR<br>TRUSTS <span class="blue">US</span></h2>
-        <p class="section-sub">
-          In a market full of new shops with aggressive pricing, we compete on something 
-          no one can replicate overnight — 37 years of relationships, knowledge, and accountability.
-        </p>
+        <p class="section-sub">In a market full of new shops with aggressive pricing, we compete on something no one can replicate overnight — 37 years of relationships, knowledge, and accountability.</p>
         <div style="margin-top: 32px; display: flex; flex-direction: column; gap: 20px;">
           <div style="display:flex; gap:16px; align-items:flex-start;">
             <div style="background:var(--blue-dim);border:1px solid var(--border);border-radius:10px;padding:12px;font-size:22px;flex-shrink:0;">🧠</div>
-            <div>
-              <div style="font-weight:700;font-size:16px;margin-bottom:6px;">Deep Product Knowledge</div>
-              <div style="font-size:14px;color:var(--grey);line-height:1.7;">We know which dash cam suits your car model, which music system fits your budget, and which CCTV covers your blind spots — not just what's in stock.</div>
-            </div>
+            <div><div style="font-weight:700;font-size:16px;margin-bottom:6px;">Deep Product Knowledge</div><div style="font-size:14px;color:var(--grey);line-height:1.7;">We know which dash cam suits your car model, which music system fits your budget, and which CCTV covers your blind spots — not just what's in stock.</div></div>
           </div>
           <div style="display:flex; gap:16px; align-items:flex-start;">
             <div style="background:var(--blue-dim);border:1px solid var(--border);border-radius:10px;padding:12px;font-size:22px;flex-shrink:0;">🔌</div>
-            <div>
-              <div style="font-weight:700;font-size:16px;margin-bottom:6px;">Professional Installation</div>
-              <div style="font-size:14px;color:var(--grey);line-height:1.7;">Every product we sell, we install with care. Our team has installed thousands of systems cleanly, with no loose wires and no voided warranties.</div>
-            </div>
+            <div><div style="font-weight:700;font-size:16px;margin-bottom:6px;">Professional Installation</div><div style="font-size:14px;color:var(--grey);line-height:1.7;">Every product we sell, we install with care. Our team has installed thousands of systems cleanly, with no loose wires and no voided warranties.</div></div>
           </div>
           <div style="display:flex; gap:16px; align-items:flex-start;">
             <div style="background:var(--blue-dim);border:1px solid var(--border);border-radius:10px;padding:12px;font-size:22px;flex-shrink:0;">🤝</div>
-            <div>
-              <div style="font-weight:700;font-size:16px;margin-bottom:6px;">After-Sale Support</div>
-              <div style="font-size:14px;color:var(--grey);line-height:1.7;">Bought something 2 years ago and have a question? Walk in — we'll help. That's the family business difference.</div>
-            </div>
+            <div><div style="font-weight:700;font-size:16px;margin-bottom:6px;">After-Sale Support</div><div style="font-size:14px;color:var(--grey);line-height:1.7;">Bought something 2 years ago and have a question? Walk in — we'll help. That's the family business difference.</div></div>
           </div>
         </div>
       </div>
@@ -912,42 +896,12 @@
     <h2 class="section-title">OUR <span class="blue">SERVICES</span></h2>
     <p class="section-sub">From the moment you walk in to long after installation — we're with you at every step.</p>
     <div class="services-grid">
-      <div class="service-card">
-        <div class="service-icon">🚗</div>
-        <div class="service-name">Car Accessories</div>
-        <div class="service-desc">Seat covers, floor mats, steering wheels, body kits, LED lighting, alloy wheels & more. Everything to make your car feel personal and premium.</div>
-        <span class="service-badge">Interior & Exterior</span>
-      </div>
-      <div class="service-card">
-        <div class="service-icon">🎵</div>
-        <div class="service-name">Android Music Systems</div>
-        <div class="service-desc">Latest Android head units with GPS, Bluetooth, Apple CarPlay & Android Auto. Fitted perfectly for your car model — clean, professional installation.</div>
-        <span class="service-badge">Installation Included</span>
-      </div>
-      <div class="service-card">
-        <div class="service-icon">📷</div>
-        <div class="service-name">Dash Cameras</div>
-        <div class="service-desc">Front, rear & 360° dash cams from trusted brands. Always-on recording for your safety and legal protection on the road.</div>
-        <span class="service-badge">Hidden Install Available</span>
-      </div>
-      <div class="service-card">
-        <div class="service-icon">🔒</div>
-        <div class="service-name">CCTV Sales & Installation</div>
-        <div class="service-desc">Complete CCTV packages for homes, shops, offices & warehouses. IP cameras, DVR/NVR systems with remote viewing on your phone.</div>
-        <span class="service-badge">Remote Viewing Setup</span>
-      </div>
-      <div class="service-card">
-        <div class="service-icon">🏠</div>
-        <div class="service-name">Home Security Solutions</div>
-        <div class="service-desc">Video doorbells, motion sensors, smart locks, alarm systems — complete home protection solutions designed and installed by our team.</div>
-        <span class="service-badge">Full System Design</span>
-      </div>
-      <div class="service-card">
-        <div class="service-icon">🏪</div>
-        <div class="service-name">Shop Security Solutions</div>
-        <div class="service-desc">Protect your business with multi-camera systems, access control, and real-time alerts. Trusted by dozens of shops in Gwalior.</div>
-        <span class="service-badge">Commercial Grade</span>
-      </div>
+      <div class="service-card"><div class="service-icon">🚗</div><div class="service-name">Car Accessories</div><div class="service-desc">Seat covers, floor mats, steering wheels, body kits, LED lighting, alloy wheels & more. Everything to make your car feel personal and premium.</div><span class="service-badge">Interior & Exterior</span></div>
+      <div class="service-card"><div class="service-icon">🎵</div><div class="service-name">Android Music Systems</div><div class="service-desc">Latest Android head units with GPS, Bluetooth, Apple CarPlay & Android Auto. Fitted perfectly for your car model — clean, professional installation.</div><span class="service-badge">Installation Included</span></div>
+      <div class="service-card"><div class="service-icon">📷</div><div class="service-name">Dash Cameras</div><div class="service-desc">Front, rear & 360° dash cams from trusted brands. Always-on recording for your safety and legal protection on the road.</div><span class="service-badge">Hidden Install Available</span></div>
+      <div class="service-card"><div class="service-icon">🔒</div><div class="service-name">CCTV Sales & Installation</div><div class="service-desc">Complete CCTV packages for homes, shops, offices & warehouses. IP cameras, DVR/NVR systems with remote viewing on your phone.</div><span class="service-badge">Remote Viewing Setup</span></div>
+      <div class="service-card"><div class="service-icon">🏠</div><div class="service-name">Home Security Solutions</div><div class="service-desc">Video doorbells, motion sensors, smart locks, alarm systems — complete home protection solutions designed and installed by our team.</div><span class="service-badge">Full System Design</span></div>
+      <div class="service-card"><div class="service-icon">🏪</div><div class="service-name">Shop Security Solutions</div><div class="service-desc">Protect your business with multi-camera systems, access control, and real-time alerts. Trusted by dozens of shops in Gwalior.</div><span class="service-badge">Commercial Grade</span></div>
     </div>
   </div>
 </section>
@@ -962,31 +916,11 @@
     <div class="why-inner" style="margin-top:40px;">
       <div>
         <div class="why-grid">
-          <div class="why-card">
-            <div class="why-num">37</div>
-            <div class="why-title">Years of Experience</div>
-            <div class="why-text">No new shop can match three and a half decades of hands-on expertise in Gwalior's market.</div>
-          </div>
-          <div class="why-card">
-            <div class="why-num">100%</div>
-            <div class="why-title">Genuine Products</div>
-            <div class="why-text">We stock only verified, authentic brands. What you buy here works — and keeps working.</div>
-          </div>
-          <div class="why-card">
-            <div class="why-num">10,000+</div>
-            <div class="why-title">Satisfied Customers</div>
-            <div class="why-text"><b>Our repeat customers and their referrals are our biggest testimonial. No ad can replicate that.</b></div>
-          </div>
-          <div class="why-card">
-            <div class="why-num">24/7</div>
-            <div class="why-title">WhatsApp Support</div>
-            <div class="why-text">Have a question after hours? Message us. We're always available for the customers we've served.</div>
-          </div>
-          <div class="why-card" style="grid-column: 1/-1;">
-            <div class="why-num">1988</div>
-            <div class="why-title">When It Matters, Experience Wins</div>
-            <div class="why-text">New shops come and go. When something goes wrong — an installation issue, a warranty question — you want someone who's been here for 37 years.</div>
-          </div>
+          <div class="why-card"><div class="why-num">37</div><div class="why-title">Years of Experience</div><div class="why-text">No new shop can match three and a half decades of hands-on expertise in Gwalior's market.</div></div>
+          <div class="why-card"><div class="why-num">100%</div><div class="why-title">Genuine Products</div><div class="why-text">We stock only verified, authentic brands. What you buy here works — and keeps working.</div></div>
+          <div class="why-card"><div class="why-num">10,000+</div><div class="why-title">Satisfied Customers</div><div class="why-text"><b>Our repeat customers and their referrals are our biggest testimonial. No ad can replicate that.</b></div></div>
+          <div class="why-card"><div class="why-num">24/7</div><div class="why-title">WhatsApp Support</div><div class="why-text">Have a question after hours? Message us. We're always available for the customers we've served.</div></div>
+          <div class="why-card" style="grid-column: 1/-1;"><div class="why-num">1988</div><div class="why-title">When It Matters, Experience Wins</div><div class="why-text">New shops come and go. When something goes wrong — an installation issue, a warranty question — you want someone who's been here for 37 years.</div></div>
         </div>
       </div>
       <div class="why-visual">
@@ -1008,108 +942,11 @@
 <div class="divider"></div>
 
 <!-- GALLERY -->
-<!--<section id="gallery" style="background: var(--black); padding: 80px 0;"> -->>
-  <!--<div class="section" style="padding-top:0; padding-bottom:0;"> -->>
-    <!--<div class="tag">Products</div> -->>
-    <!--<h2 class="section-title">PRODUCT <span class="blue">GALLERY</span></h2> -->>
-    <!--<p class="section-sub">Browse our full range — from car interiors to home security. Filter by category to find what you need.</p> -->>
-    <!--<div class="filter-bar"> -->>
-      <!--<button class="filter-btn active" onclick="filterGallery('all', this)">All Products</button> -->>
-      <!--<button class="filter-btn" onclick="filterGallery('interior', this)">🚗 Car Interior</button> -->>
-      <!--<button class="filter-btn" onclick="filterGallery('exterior', this)">✨ Car Exterior</button> -->>
-      <!--<button class="filter-btn" onclick="filterGallery('audio', this)">🎵 Car Audio</button> -->>
-      <!--<button class="filter-btn" onclick="filterGallery('dash', this)">📷 Dash Cameras</button> -->>
-      <!--<button class="filter-btn" onclick="filterGallery('cctv', this)">🔒 CCTV & Security</button> -->>
-      <!--<button class="filter-btn" onclick="filterGallery('electronics', this)">⚡ Car Electronics</button> -->>
-    <!--</div> -->>
-    <!--<div class="gallery-grid" id="galleryGrid"> -->>
-      <!--<div class="gallery-item" data-cat="interior"> -->>
-        <!--<div class="gallery-thumb">🪑</div> -->>
-        <!--<div class="gallery-info"><div class="gallery-name">Premium Seat Covers</div><div class="gallery-cat">Car Interior</div></div> -->>
-      <!--</div> -->>
-      <!--<div class="gallery-item" data-cat="interior"> -->>
-        <!--<div class="gallery-thumb">🧹</div> -->>
-        <!--<div class="gallery-info"><div class="gallery-name">Floor Mats & Carpets</div><div class="gallery-cat">Car Interior</div></div> -->>
-      <!--</div> -->>
-      <!--<div class="gallery-item" data-cat="interior"> -->>
-        <!--<div class="gallery-thumb">🎛️</div> -->>
-        <!--<div class="gallery-info"><div class="gallery-name">Steering Wheel Covers</div><div class="gallery-cat">Car Interior</div></div> -->>
-      <!--</div> -->>
-      <!--<div class="gallery-item" data-cat="audio"> -->>
-        <!--<div class="gallery-thumb">📺</div> -->>
-        <!--<div class="gallery-info"><div class="gallery-name">Android Head Units</div><div class="gallery-cat">Car Audio</div></div> -->>
-      <!--</div> -->>
-      <!--<div class="gallery-item" data-cat="audio"> -->>
-        <!--<div class="gallery-thumb">🔊</div> -->>
-        <!--<div class="gallery-info"><div class="gallery-name">Car Speakers & Subwoofers</div><div class="gallery-cat">Car Audio</div></div> -->>
-      <!--</div> -->>
-      <!--<div class="gallery-item" data-cat="audio"> -->>
-        <!--<div class="gallery-thumb">📻</div> -->>
-        <!--<div class="gallery-info"><div class="gallery-name">2-DIN Music Systems</div><div class="gallery-cat">Car Audio</div></div> -->>
-      <!--</div> -->>
-      <!--<div class="gallery-item" data-cat="dash"> -->>
-        <!--<div class="gallery-thumb">📷</div> -->>
-        <!--<div class="gallery-info"><div class="gallery-name">Front Dash Cameras</div><div class="gallery-cat">Dash Cameras</div></div> -->>
-      <!--</div> -->>
-      <!--<div class="gallery-item" data-cat="dash"> -->>
-        <!--<div class="gallery-thumb">🎥</div> -->>
-        <!--<div class="gallery-info"><div class="gallery-name">Front + Rear Combo</div><div class="gallery-cat">Dash Cameras</div></div> -->>
-      <!--</div> -->>
-      <!--<div class="gallery-item" data-cat="dash"> -->>
-        <!--<div class="gallery-thumb">🔄</div> -->>
-        <!--<div class="gallery-info"><div class="gallery-name">360° Dash Cameras</div><div class="gallery-cat">Dash Cameras</div></div> -->>
-      <!--</div> -->>
-      <!--<div class="gallery-item" data-cat="cctv"> -->>
-        <!--<div class="gallery-thumb">👁️</div> -->>
-        <!--<div class="gallery-info"><div class="gallery-name">IP CCTV Cameras</div><div class="gallery-cat">CCTV & Security</div></div> -->>
-      <!--</div> -->>
-      <!--<div class="gallery-item" data-cat="cctv"> -->>
-        <!--<div class="gallery-thumb">🖥️</div> -->>
-        <!--<div class="gallery-info"><div class="gallery-name">DVR / NVR Packages</div><div class="gallery-cat">CCTV & Security</div></div> -->>
-      <!--</div> -->>
-      <!--<div class="gallery-item" data-cat="cctv"> -->>
-        <!--<div class="gallery-thumb">🔔</div> -->>
-        <!--<div class="gallery-info"><div class="gallery-name">Video Doorbells</div><div class="gallery-cat">Home Security</div></div> -->>
-      <!--</div> -->>
-      <!--<div class="gallery-item" data-cat="exterior"> -->>
-        <!--<div class="gallery-thumb">💡</div> -->>
-        <!--<div class="gallery-info"><div class="gallery-name">LED Fog Lights</div><div class="gallery-cat">Car Exterior</div></div> -->>
-      <!--</div> -->>
-      <!--<div class="gallery-item" data-cat="exterior"> -->>
-        <!--<div class="gallery-thumb">🎨</div> -->>
-        <!--<div class="gallery-info"><div class="gallery-name">Body Side Moulding</div><div class="gallery-cat">Car Exterior</div></div> -->>
-      <!--</div> -->>
-      <!--<div class="gallery-item" data-cat="electronics"> -->>
-        <!--<div class="gallery-thumb">📡</div> -->>
-        <!--<div class="gallery-info"><div class="gallery-name">Reverse Parking Sensors</div><div class="gallery-cat">Car Electronics</div></div> -->>
-      <!--</div> -->>
-      <!--<div class="gallery-item" data-cat="electronics"> -->>
-        <!--<div class="gallery-thumb">🔋</div> -->>
-        <!--<div class="gallery-info"><div class="gallery-name">Car Inverters & Chargers</div><div class="gallery-cat">Car Electronics</div></div> -->>
-      <!--</div> -->>
-      <!--<div class="gallery-item" data-cat="electronics"> -->>
-        <!--<div class="gallery-thumb">📍</div> -->>
-        <!--<div class="gallery-info"><div class="gallery-name">GPS Trackers</div><div class="gallery-cat">Car Electronics</div></div> -->>
-      <!--</div> -->>
-      <!--<div class="gallery-item" data-cat="cctv"> -->>
-        <!--<div class="gallery-thumb">🚨</div> -->>
-        <!--<div class="gallery-info"><div class="gallery-name">Shop Alarm Systems</div><div class="gallery-cat">Shop Security</div></div> -->>
-      <!--</div> -->>
-    <!--</div> -->>
-    <!--<div style="text-align:center; margin-top:36px;"> -->>
-      <!--<p style="color:var(--grey); font-size:14px; margin-bottom:16px;">Don't see what you need? We likely have it. Ask us directly.</p> -->>
-      <!--<a href="https://wa.me/91XXXXXXXXXX" class="btn-primary">📲 Ask on WhatsApp</a> -->>
-    <!--</div> -->>
-  <!--</div> -->>
-<!--</section> -->>
-
-<!-- ===================== GALLERY SECTION ===================== -->
 <section id="gallery" style="background: var(--black); padding: 80px 0;">
   <div class="section" style="padding-top:0; padding-bottom:0;">
     <div class="tag">Quality You Can Trust</div>
     <h2 class="section-title">PRODUCT <span class="blue">GALLERY</span></h2>
     <p class="section-sub">Browse our full range — tap any category to see all products.</p>
-
     <div class="filter-bar">
       <button class="filter-btn active" onclick="filterGallery('all', this)">All Categories</button>
       <button class="filter-btn" onclick="filterGallery('interior', this)">🚗 Car Interior</button>
@@ -1119,76 +956,24 @@
       <button class="filter-btn" onclick="filterGallery('cctv', this)">🔒 CCTV & Security</button>
       <button class="filter-btn" onclick="filterGallery('electronics', this)">⚡ Car Electronics</button>
     </div>
-
     <div class="gallery-grid" id="galleryGrid">
-
-      <div class="gallery-item" data-cat="interior" onclick="openModal('interior')">
-        <div class="gallery-thumb">🪑</div>
-        <div class="gallery-info">
-          <div class="gallery-name">Car Interior</div>
-          <div class="gallery-cat">Seat Covers · Mats · Steering · More</div>
-          <div class="gallery-view-hint">Tap to view all products →</div>
-        </div>
-      </div>
-
-      <div class="gallery-item" data-cat="exterior" onclick="openModal('exterior')">
-        <div class="gallery-thumb">✨</div>
-        <div class="gallery-info">
-          <div class="gallery-name">Car Exterior</div>
-          <div class="gallery-cat">LED Lights · Body Kits · Alloys · More</div>
-          <div class="gallery-view-hint">Tap to view all products →</div>
-        </div>
-      </div>
-
-      <div class="gallery-item" data-cat="audio" onclick="openModal('audio')">
-        <div class="gallery-thumb">🎵</div>
-        <div class="gallery-info">
-          <div class="gallery-name">Car Audio</div>
-          <div class="gallery-cat">Android Head Units · Speakers · Subwoofers</div>
-          <div class="gallery-view-hint">Tap to view all products →</div>
-        </div>
-      </div>
-
-      <div class="gallery-item" data-cat="dash" onclick="openModal('dash')">
-        <div class="gallery-thumb">📷</div>
-        <div class="gallery-info">
-          <div class="gallery-name">Dash Cameras</div>
-          <div class="gallery-cat">Front · Rear · 360° Cameras</div>
-          <div class="gallery-view-hint">Tap to view all products →</div>
-        </div>
-      </div>
-
-      <div class="gallery-item" data-cat="cctv" onclick="openModal('cctv')">
-        <div class="gallery-thumb">🔒</div>
-        <div class="gallery-info">
-          <div class="gallery-name">CCTV & Security</div>
-          <div class="gallery-cat">IP Cameras · DVR/NVR · Doorbells · Alarms</div>
-          <div class="gallery-view-hint">Tap to view all products →</div>
-        </div>
-      </div>
-
-      <div class="gallery-item" data-cat="electronics" onclick="openModal('electronics')">
-        <div class="gallery-thumb">⚡</div>
-        <div class="gallery-info">
-          <div class="gallery-name">Car Electronics</div>
-          <div class="gallery-cat">Parking Sensors · GPS · Inverters · More</div>
-          <div class="gallery-view-hint">Tap to view all products →</div>
-        </div>
-      </div>
-
+      <div class="gallery-item" data-cat="interior" onclick="openModal('interior')"><div class="gallery-thumb">🪑</div><div class="gallery-info"><div class="gallery-name">Car Interior</div><div class="gallery-cat">Seat Covers · Mats · Steering · More</div><div class="gallery-view-hint">Tap to view all products →</div></div></div>
+      <div class="gallery-item" data-cat="exterior" onclick="openModal('exterior')"><div class="gallery-thumb">✨</div><div class="gallery-info"><div class="gallery-name">Car Exterior</div><div class="gallery-cat">LED Lights · Body Kits · Alloys · More</div><div class="gallery-view-hint">Tap to view all products →</div></div></div>
+      <div class="gallery-item" data-cat="audio" onclick="openModal('audio')"><div class="gallery-thumb">🎵</div><div class="gallery-info"><div class="gallery-name">Car Audio</div><div class="gallery-cat">Android Head Units · Speakers · Subwoofers</div><div class="gallery-view-hint">Tap to view all products →</div></div></div>
+      <div class="gallery-item" data-cat="dash" onclick="openModal('dash')"><div class="gallery-thumb">📷</div><div class="gallery-info"><div class="gallery-name">Dash Cameras</div><div class="gallery-cat">Front · Rear · 360° Cameras</div><div class="gallery-view-hint">Tap to view all products →</div></div></div>
+      <div class="gallery-item" data-cat="cctv" onclick="openModal('cctv')"><div class="gallery-thumb">🔒</div><div class="gallery-info"><div class="gallery-name">CCTV & Security</div><div class="gallery-cat">IP Cameras · DVR/NVR · Doorbells · Alarms</div><div class="gallery-view-hint">Tap to view all products →</div></div></div>
+      <div class="gallery-item" data-cat="electronics" onclick="openModal('electronics')"><div class="gallery-thumb">⚡</div><div class="gallery-info"><div class="gallery-name">Car Electronics</div><div class="gallery-cat">Parking Sensors · GPS · Inverters · More</div><div class="gallery-view-hint">Tap to view all products →</div></div></div>
     </div>
-
     <div style="text-align:center; margin-top:36px;">
       <p style="color:var(--grey); font-size:14px; margin-bottom:16px;">Don't see what you need? We likely have it.</p>
-      <a href="https://wa.me/91XXXXXXXXXX" class="btn-primary">📲 Ask on WhatsApp</a>
+      <a href="https://Wa.me/+919425110451" class="btn-primary">📲 Ask on WhatsApp</a>
     </div>
   </div>
 </section>
 
-<!-- ===================== MODAL ===================== -->
+<!-- PRODUCT MODAL -->
 <div id="productModal" class="modal-overlay" onclick="handleOverlayClick(event)">
   <div class="modal-box">
-
     <div class="modal-header">
       <div>
         <div id="modalTag" class="tag" style="margin-bottom:8px;"></div>
@@ -1197,22 +982,186 @@
       </div>
       <button class="modal-close" onclick="closeModal()">✕</button>
     </div>
-
-    <div id="modalGrid" class="modal-photo-grid">
-      <!-- Photos injected by JS -->
-    </div>
-
+    <div id="modalGrid" class="modal-photo-grid"></div>
     <div style="text-align:center; margin-top:28px; padding-top:24px; border-top:1px solid var(--border);">
       <p style="font-size:14px; color:var(--grey); margin-bottom:14px;">Want to know pricing or availability?</p>
       <a href="https://Wa.me/+919425110451" class="btn-primary" target="_blank">📲 Ask on WhatsApp</a>
     </div>
-
   </div>
 </div>
 
 <div class="divider"></div>
 
+<!-- ══════════════════════════════════════════════════════════════
+     AI INSIGHTS SECTION  (between Gallery and Reviews)
+══════════════════════════════════════════════════════════════ -->
+<section id="ai-insights" style="background: var(--dark); padding: 80px 0;">
+  <div class="section" style="padding-top:0; padding-bottom:0;">
 
+    <div class="tag">Powered by ML · Google Colab</div>
+    <h2 class="section-title">AI <span class="blue">INSIGHTS</span></h2>
+    <p class="section-sub" style="max-width:640px;">
+      Real sales data from FY 25-26 & FY 2026-27 was analysed using Python, Pandas, Seaborn and
+      Facebook Prophet on Google Colab. The charts below reveal what the numbers say about
+      Amit Electronics' business — objectively.
+    </p>
+
+    <!-- 3 Chart Cards -->
+    <div class="insights-charts-grid">
+
+      <!-- Chart 1: ABC / Top 20 A-Class -->
+      <div class="insight-chart-card">
+        <div class="chart-img-wrap">
+          <!--
+            REPLACE src below with your actual image path.
+            Options:
+              (a) Put images in same folder → src="./images/chart_abc.png"
+              (b) Host on GitHub / Cloudinary → src="https://..."
+              (c) Use the chart already embedded in the Jupyter notebook output
+          -->
+          <img
+            src="./charts/02_top20_a_class.png"
+            alt="Top 20 A-Class Products by Revenue FY 25-26"
+            onerror="this.parentElement.innerHTML='<div class=\'chart-placeholder\'><div class=\'chart-placeholder-icon\'>📊</div><div class=\'chart-placeholder-label\'>Top 20 A-Class Products</div><div style=\'font-size:11px;color:#445566;margin-top:4px;font-family:monospace;\'>Add image: ./charts/02_top20_a_class.png</div></div>'"
+          />
+        </div>
+        <div class="chart-body">
+          <div class="chart-label">ABC Analysis · FY 2025-26</div>
+          <div class="chart-title">Top 20 Revenue-Driving Products</div>
+          <div class="chart-desc">
+            ABC classification on 605 SKUs shows that just 95 products (16% of inventory) generate
+            <strong style="color:var(--blue-bright)">70% of all revenue (₹39.9 Lakhs)</strong>.
+            Mobile Holder, Blue Bird Stabilizers and BBT-201 Android Player dominate. These are
+            your zero-stockout products — always keep them on the shelf.
+          </div>
+          <div class="chart-stat-row">
+            <span class="chart-stat-pill">95 A-Class SKUs</span>
+            <span class="chart-stat-pill">₹39.9L Revenue</span>
+            <span class="chart-stat-pill">70% Share</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Chart 2: Category Pie -->
+      <div class="insight-chart-card">
+        <div class="chart-img-wrap">
+          <img
+            src="./charts/05_revenue_pie.png"
+            alt="Revenue Share by Category FY 2025-26"
+            onerror="this.parentElement.innerHTML='<div class=\'chart-placeholder\'><div class=\'chart-placeholder-icon\'>🥧</div><div class=\'chart-placeholder-label\'>Revenue by Category</div><div style=\'font-size:11px;color:#445566;margin-top:4px;font-family:monospace;\'>Add image: ./charts/05_category_pie.png</div></div>'"
+          />
+        </div>
+        <div class="chart-body">
+          <div class="chart-label">Category Intelligence · FY 2025-26</div>
+          <div class="chart-title">Revenue Share Across All Categories</div>
+          <div class="chart-desc">
+            <strong style="color:var(--blue-bright)">CCTV & Security (19.6%)</strong> is the
+            second-largest category and the fastest-growing segment, driven by rising surveillance
+            demand in Tier-2 cities. Car Audio and Car Accessories each contribute ~14%.
+            Networking (2.1%) is underpenetrated — an opportunity to grow.
+          </div>
+          <div class="chart-stat-row">
+            <span class="chart-stat-pill">CCTV ₹11.2L</span>
+            <span class="chart-stat-pill">Audio ₹8.0L</span>
+            <span class="chart-stat-pill">6 Categories</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Chart 3: Demand Forecast -->
+      <div class="insight-chart-card">
+        <div class="chart-img-wrap">
+          <img
+            src="./charts/07_demand_forecast.png"
+            alt="Demand Forecast Top 3 Products"
+            onerror="this.parentElement.innerHTML='<div class=\'chart-placeholder\'><div class=\'chart-placeholder-icon\'>📈</div><div class=\'chart-placeholder-label\'>Demand Forecast</div><div style=\'font-size:11px;color:#445566;margin-top:4px;font-family:monospace;\'>Add image: ./charts/07_demand_forecast.png</div></div>'"
+          />
+        </div>
+        <div class="chart-body">
+          <div class="chart-label">Forecasting · Proof of Concept</div>
+          <div class="chart-title">6-Month Demand Forecast — Top 3 Products</div>
+          <div class="chart-desc">
+            Using Prophet-style polynomial regression, monthly demand was forecast for the top 3
+            revenue products with <strong style="color:var(--blue-bright)">MAE under 1 unit</strong>
+            on train/test splits. All three products show upward trajectory — stock up before
+            Oct–Dec festival season. Based on synthetic monthly distribution of annual data.
+          </div>
+          <div class="chart-stat-row">
+            <span class="chart-stat-pill">6-Month Horizon</span>
+            <span class="chart-stat-pill">MAE &lt;1 unit</span>
+            <span class="chart-stat-pill">95% CI Shown</span>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /insights-charts-grid -->
+
+    <!-- ── HOW IT WORKS ─────────────────────────────────────────── -->
+    <div class="workflow-section">
+      <h3 class="workflow-title">HOW <span class="blue">IT WORKS</span></h3>
+      <p class="workflow-sub">The ML pipeline that turns raw sales data into actionable decisions — built on Google Colab, zero infrastructure needed.</p>
+
+      <div class="workflow-steps">
+
+        <div class="workflow-step">
+          <div class="workflow-step-num">
+            <span>📋</span>
+            <span class="workflow-step-badge">1</span>
+          </div>
+          <div class="workflow-step-title">Data Collection</div>
+          <div class="workflow-step-desc">Raw Excel sales registers from FY 2025-26 & FY 2026-27 loaded into Python Pandas. 605+ SKUs, two financial years.</div>
+          <span class="workflow-arrow">→</span>
+        </div>
+
+        <div class="workflow-step">
+          <div class="workflow-step-num">
+            <span>🧠</span>
+            <span class="workflow-step-badge">2</span>
+          </div>
+          <div class="workflow-step-title">ML Analysis</div>
+          <div class="workflow-step-desc">ABC classification, YoY growth analysis, keyword-based category tagging, and demand forecasting using Prophet & sklearn.</div>
+          <span class="workflow-arrow">→</span>
+        </div>
+
+        <div class="workflow-step">
+          <div class="workflow-step-num">
+            <span>📊</span>
+            <span class="workflow-step-badge">3</span>
+          </div>
+          <div class="workflow-step-title">Business Insights</div>
+          <div class="workflow-step-desc">Charts, ranked tables, and a master summary CSV with ABC class, growth %, and next-month forecast for every product.</div>
+          <span class="workflow-arrow">→</span>
+        </div>
+
+        <div class="workflow-step">
+          <div class="workflow-step-num">
+            <span>✅</span>
+            <span class="workflow-step-badge">4</span>
+          </div>
+          <div class="workflow-step-title">Smarter Decisions</div>
+          <div class="workflow-step-desc">Stock A-class items proactively, phase out declining C-class SKUs, pre-order before festival season, grow the CCTV category.</div>
+        </div>
+
+      </div>
+
+      <!-- Tech stack pills -->
+      <div class="tech-stack-row">
+        <span class="tech-label">Built with</span>
+        <span class="tech-pill">Python 3.11</span>
+        <span class="tech-pill">Pandas</span>
+        <span class="tech-pill">Matplotlib · Seaborn</span>
+        <span class="tech-pill">Facebook Prophet</span>
+        <span class="tech-pill">scikit-learn</span>
+        <span class="tech-pill">Google Colab</span>
+        <span class="tech-pill">openpyxl</span>
+      </div>
+
+    </div><!-- /workflow-section -->
+
+  </div>
+</section>
+
+<div class="divider"></div>
 
 <!-- REVIEWS -->
 <section id="reviews" style="background: var(--dark); padding: 80px 0;">
@@ -1225,87 +1174,20 @@
         <div class="stars">★★★★★</div>
         <div class="review-text short-review">
 Although I never give 5 star rating to any business entity, Amit Electronics truly deserves appreciation for their excellent work. Owner's behaviour is like family.
-
-<span class="more-text">
-He'll treat you like their own family member. Your car becomes their own car when it comes to work. He's truly a gem in this cruel world. I would recommend everyone to visit this place, and get their work done because they are the best that you could get.
-</span>
-
-<button class="read-more-btn" onclick="toggleReview(this)">
-Read More
-</button>
-</div>
-        <div class="reviewer">
-          <div class="reviewer-avatar">PS</div>
-          <div><div class="reviewer-name">Prince Sharma</div><div class="reviewer-meta">Google Review · a year ago</div></div>
+<span class="more-text">He'll treat you like their own family member. Your car becomes their own car when it comes to work. He's truly a gem in this cruel world. I would recommend everyone to visit this place, and get their work done because they are the best that you could get.</span>
+<button class="read-more-btn" onclick="toggleReview(this)">Read More</button>
         </div>
+        <div class="reviewer"><div class="reviewer-avatar">PS</div><div><div class="reviewer-name">Prince Sharma</div><div class="reviewer-meta">Google Review · a year ago</div></div></div>
       </div>
-      <div class="review-card">
-        <div class="stars">★★★★★</div>
-        <div class="review-text">"All accessories in one rooftop,most valuable shop in Gwalior"</div>
-        <div class="reviewer">
-          <div class="reviewer-avatar">DS</div>
-          <div><div class="reviewer-name">Deeksha Sharma</div><div class="reviewer-meta">Google Review · 3 months ago</div></div>
-        </div>
-      </div>
-      <div class="review-card">
-        <div class="stars">★★★★★</div>
-        <div class="review-text">"Its popular for its quality and price. Here, we can get better electronic items in cheaper price in town."</div>
-        <div class="reviewer">
-          <div class="reviewer-avatar">MY</div>
-          <div><div class="reviewer-name">Mahendra Yadav</div><div class="reviewer-meta">Google Review · 7 years ago</div></div>
-        </div>
-      </div>
-      <div class="review-card">
-        <div class="stars">★★★★</div>
-        <div class="review-text">"You just think of any product and product is available, extremely latest product of electronics or car accessories or CCTV one can find here at reasonable price"</div>
-        <div class="reviewer">
-          <div class="reviewer-avatar">KK</div>
-          <div><div class="reviewer-name">Kapil Keswani</div><div class="reviewer-meta">Google Review · 3 years ago</div></div>
-        </div>
-      </div>
-      <div class="review-card">
-        <div class="stars">★★★★★</div>
-        <div class="review-text">"Talk of the town! Seems everyone knows abt the place and if u dont get ur specific requirements fulfilled here . Then it is not gonna be in any other place in the city !"</div>
-        <div class="reviewer">
-          <div class="reviewer-avatar">SA</div>
-          <div><div class="reviewer-name">Sunil Arora</div><div class="reviewer-meta">Google Review · 4 years ago</div></div>
-        </div>
-      </div>
-      <div class="review-card">
-        <div class="stars">★★★★★</div>
-        <div class="review-text">"सभी सामान उचित रेट पर मिल जाता है"</div>
-        <div class="reviewer">
-          <div class="reviewer-avatar">MM</div>
-          <div><div class="reviewer-name">Mukesh Mahor</div><div class="reviewer-meta">Google Review · 4 years ago</div></div>
-        </div>
-      </div>
-      <div class="review-card">
-        <div class="stars">★★★★★</div>
-        <div class="review-text">"Every electronic items like card decor accessories and tv cctv all other itmes all in one shop at cheap price and company and local both itmes available"</div>
-        <div class="reviewer">
-          <div class="reviewer-avatar">KG</div>
-          <div><div class="reviewer-name">Keshav Gupta</div><div class="reviewer-meta">Google Review · few years ago</div></div>
-        </div>
-      </div>
-      <div class="review-card">
-        <div class="stars">★★★★★</div>
-        <div class="review-text">"Great place to buy electronics small appliances. Specifically for cars and home, office and entertainment devices."</div>
-        <div class="reviewer">
-          <div class="reviewer-avatar">GJ</div>
-          <div><div class="reviewer-name">Gaurav Jain</div><div class="reviewer-meta">Google Review · 5 years ago</div></div>
-        </div>
-      </div>
-      
-      <div class="review-card">
-        <div class="stars">★★★★</div>
-        <div class="review-text">"Amit electronics is one of the most popular shop for CCTV camera and security system. Amit electronics's items are more economic and quality better average"</div>
-        <div class="reviewer">
-          <div class="reviewer-avatar">SS</div>
-          <div><div class="reviewer-name">Dr. S.S. Tomar</div><div class="reviewer-meta">Google Review · 7 years ago</div></div>
-        </div>
-      </div>
+      <div class="review-card"><div class="stars">★★★★★</div><div class="review-text">"All accessories in one rooftop, most valuable shop in Gwalior"</div><div class="reviewer"><div class="reviewer-avatar">DS</div><div><div class="reviewer-name">Deeksha Sharma</div><div class="reviewer-meta">Google Review · 3 months ago</div></div></div></div>
+      <div class="review-card"><div class="stars">★★★★★</div><div class="review-text">"Its popular for its quality and price. Here, we can get better electronic items in cheaper price in town."</div><div class="reviewer"><div class="reviewer-avatar">MY</div><div><div class="reviewer-name">Mahendra Yadav</div><div class="reviewer-meta">Google Review · 7 years ago</div></div></div></div>
+      <div class="review-card"><div class="stars">★★★★</div><div class="review-text">"You just think of any product and product is available, extremely latest product of electronics or car accessories or CCTV one can find here at reasonable price"</div><div class="reviewer"><div class="reviewer-avatar">KK</div><div><div class="reviewer-name">Kapil Keswani</div><div class="reviewer-meta">Google Review · 3 years ago</div></div></div></div>
+      <div class="review-card"><div class="stars">★★★★★</div><div class="review-text">"Talk of the town! Seems everyone knows abt the place and if u dont get ur specific requirements fulfilled here. Then it is not gonna be in any other place in the city!"</div><div class="reviewer"><div class="reviewer-avatar">SA</div><div><div class="reviewer-name">Sunil Arora</div><div class="reviewer-meta">Google Review · 4 years ago</div></div></div></div>
+      <div class="review-card"><div class="stars">★★★★★</div><div class="review-text">"सभी सामान उचित रेट पर मिल जाता है"</div><div class="reviewer"><div class="reviewer-avatar">MM</div><div><div class="reviewer-name">Mukesh Mahor</div><div class="reviewer-meta">Google Review · 4 years ago</div></div></div></div>
+      <div class="review-card"><div class="stars">★★★★★</div><div class="review-text">"Every electronic items like card decor accessories and tv cctv all other itmes all in one shop at cheap price and company and local both itmes available"</div><div class="reviewer"><div class="reviewer-avatar">KG</div><div><div class="reviewer-name">Keshav Gupta</div><div class="reviewer-meta">Google Review · few years ago</div></div></div></div>
+      <div class="review-card"><div class="stars">★★★★★</div><div class="review-text">"Great place to buy electronics small appliances. Specifically for cars and home, office and entertainment devices."</div><div class="reviewer"><div class="reviewer-avatar">GJ</div><div><div class="reviewer-name">Gaurav Jain</div><div class="reviewer-meta">Google Review · 5 years ago</div></div></div></div>
+      <div class="review-card"><div class="stars">★★★★</div><div class="review-text">"Amit electronics is one of the most popular shop for CCTV camera and security system. Amit electronics's items are more economic and quality better average"</div><div class="reviewer"><div class="reviewer-avatar">SS</div><div><div class="reviewer-name">Dr. S.S. Tomar</div><div class="reviewer-meta">Google Review · 7 years ago</div></div></div></div>
     </div>
-    
     <div class="google-cta">
       <div class="google-rating-box">
         <div class="google-score">4</div>
@@ -1318,7 +1200,6 @@ Read More
       </div>
     </div>
   </div>
-  
 </section>
 
 <div class="divider"></div>
@@ -1333,37 +1214,10 @@ Read More
       <div class="contact-card">
         <h3 style="font-size:20px; font-weight:700; margin-bottom:24px;">Contact & Location</h3>
         <div class="contact-items">
-          <div class="contact-item">
-            <div class="contact-icon">📍</div>
-            <div>
-              <div class="contact-label">Address</div>
-              <div class="contact-value"> Amit Electronics & Car Accessories Jinsi Road No. 2,Maithili Sharan Chowk Lashkar<br>Gwalior, Madhya Pradesh</div>
-            </div>
-          </div>
-          <div class="contact-item">
-            <div class="contact-icon">📞</div>
-            <div>
-              <div class="contact-label">Phone / Call</div>
-              <div class="contact-value"><a href="tel: 0751 232 3212 ">0751 232 3212</a></div>
-              <div class="contact-value"><a href="tel: +91 9425110451 ">+91 9425110451</a></div>
-              
-              
-            </div>
-          </div>
-          <div class="contact-item">
-            <div class="contact-icon">💬</div>
-            <div>
-              <div class="contact-label">WhatsApp</div>
-              <div class="contact-value"><a href="https://Wa.me/+919425110451" style="color: #25d366;">Chat on WhatsApp</a></div>
-            </div>
-          </div>
-          <div class="contact-item">
-            <div class="contact-icon">🕐</div>
-            <div>
-              <div class="contact-label">Shop Hours</div>
-              <div class="contact-value">Everyday: 10:30 AM – 9:00 PM<br><span style="color:var(--grey);font-size:13px;">Tuesday: Closed</span></div>
-            </div>
-          </div>
+          <div class="contact-item"><div class="contact-icon">📍</div><div><div class="contact-label">Address</div><div class="contact-value">Amit Electronics & Car Accessories<br>Jinsi Road No. 2, Maithili Sharan Chowk<br>Lashkar, Gwalior, Madhya Pradesh</div></div></div>
+          <div class="contact-item"><div class="contact-icon">📞</div><div><div class="contact-label">Phone / Call</div><div class="contact-value"><a href="tel:07512323212">0751 232 3212</a></div><div class="contact-value"><a href="tel:+919425110451">+91 9425110451</a></div></div></div>
+          <div class="contact-item"><div class="contact-icon">💬</div><div><div class="contact-label">WhatsApp</div><div class="contact-value"><a href="https://Wa.me/+919425110451" style="color: #25d366;">Chat on WhatsApp</a></div></div></div>
+          <div class="contact-item"><div class="contact-icon">🕐</div><div><div class="contact-label">Shop Hours</div><div class="contact-value">Everyday: 10:30 AM – 9:00 PM<br><span style="color:var(--grey);font-size:13px;">Tuesday: Closed</span></div></div></div>
         </div>
         <div style="margin-top:28px; padding: 18px; background:var(--blue-dim); border:1px solid var(--border); border-radius:var(--radius);">
           <p style="font-size:14px; color:var(--blue-bright); font-weight:600; margin-bottom:4px;">📲 WhatsApp for Quick Response</p>
@@ -1375,34 +1229,16 @@ Read More
           <div class="map-placeholder-icon">🗺️</div>
           <p style="font-weight:600; font-size:16px;">Jinsi Road No. 2, Lashkar</p>
           <p style="font-size:14px; color:var(--grey);">Gwalior, Madhya Pradesh</p>
-          <a href="https://www.google.com/maps/place/Amit+Electronics+%26+Car+Accessories+%7C+Best+value+for+money+store+in+Gwalior/@26.2004641,78.1536963,17z/data=!3m1!4b1!4m6!3m5!1s0x3976c5d2b546f799:0x6f86498ee1592b6d!8m2!3d26.2004593!4d78.1562712!16s%2Fg%2F124yr9zfg?entry=ttu&g_ep=EgoyMDI2MDUxMy4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="btn-primary" style="margin-top:8px; font-size:14px; padding: 11px 22px;">
-            Open in Google Maps
-          </a>
+          <a href="https://www.google.com/maps/place/Amit+Electronics+%26+Car+Accessories+%7C+Best+value+for+money+store+in+Gwalior/@26.2004641,78.1536963,17z/data=!3m1!4b1!4m6!3m5!1s0x3976c5d2b546f799:0x6f86498ee1592b6d!8m2!3d26.2004593!4d78.1562712!16s%2Fg%2F124yr9zfg?entry=ttu&g_ep=EgoyMDI2MDUxMy4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="btn-primary" style="margin-top:8px; font-size:14px; padding: 11px 22px;">Open in Google Maps</a>
         </div>
         <div style="margin-top:16px; display:grid; grid-template-columns:1fr 1fr; gap:12px;">
-          <a href="https://Wa.me/+919425110451" class="btn-primary" style="justify-content:center; background:#25d366; box-shadow: 0 0 24px rgba(37,211,102,0.25);">
-            📲 WhatsApp
-          </a>
-          <a href="tel:0751 2323212" class="btn-outline" style="justify-content:center;">
-            📞 Call Now
-          </a>
+          <a href="https://Wa.me/+919425110451" class="btn-primary" style="justify-content:center; background:#25d366; box-shadow: 0 0 24px rgba(37,211,102,0.25);">📲 WhatsApp</a>
+          <a href="tel:07512323212" class="btn-outline" style="justify-content:center;">📞 Call Now</a>
         </div>
         <div style="margin-top:16px; background:var(--card); border:1px solid var(--border); border-radius:var(--radius); padding:20px; text-align:center;">
           <p style="font-size:13px; color:var(--grey); margin-bottom:12px; text-transform:uppercase; letter-spacing:1px; font-family:'Space Mono',monospace;">Scan to Leave a Google Review</p>
           <div style="width:120px; height:120px; background:var(--blue-dim); border:1px solid var(--border); border-radius:8px; margin:0 auto; overflow:hidden;">
-            <img 
-  src="./images/review-qr.png"
-  alt="Google Review QR"
-  style="
-    width:100%;
-    height:100%;
-    object-fit:cover;
-    border-radius:8px;
-  "
->
-            <!--<span style="font-size:32px;">⭐</span> -->>
-            <!-- <span style="font-size:11px; color:var(--grey);">QR Code Here</span> -->>
-
+            <img src="./charts/review-qr.png" alt="Google Review QR" style="width:100%;height:100%;object-fit:cover;border-radius:8px;" onerror="this.style.display='none'">
           </div>
           <p style="font-size:12px; color:var(--grey); margin-top:10px;">Add your Google Review QR code here</p>
         </div>
@@ -1411,14 +1247,65 @@ Read More
   </div>
 </section>
 
-<!-- FLOATING BUTTONS -->
+<!-- FLOATING BUTTONS (right side) -->
 <div class="float-btns">
   <a href="https://Wa.me/+919425110451" class="float-btn float-wa" target="_blank" rel="noopener">
     <span class="icon">💬</span><span class="btn-label">WhatsApp Us</span>
   </a>
-  <a href="tel:0751 2323212" class="float-btn float-call">
+  <a href="tel:07512323212" class="float-btn float-call">
     <span class="icon">📞</span><span class="btn-label">Call Now</span>
   </a>
+</div>
+
+<!-- ══════════════════════════════════════════════════════════════
+     AI CHAT WIDGET (bottom-left, opposite side from WA/Call)
+══════════════════════════════════════════════════════════════ -->
+<div class="chat-widget" id="chatWidget">
+  <!-- Chat panel (opens above button) -->
+  <div class="chat-panel" id="chatPanel">
+    <!-- Header -->
+    <div class="chat-header">
+      <div class="chat-header-avatar">🤖</div>
+      <div class="chat-header-info">
+        <div class="chat-header-name">Amit Electronics Assistant</div>
+        <div class="chat-header-status">Online</div>
+      </div>
+      <button class="chat-close-btn" onclick="toggleChat()" aria-label="Close chat">✕</button>
+    </div>
+
+    <!-- Messages -->
+    <div class="chat-messages" id="chatMessages">
+      <!-- Welcome message injected by JS -->
+    </div>
+
+    <!-- Quick replies -->
+    <div class="quick-replies" id="quickReplies">
+      <button class="quick-reply-btn" onclick="sendQuickReply('CCTV packages available?')">CCTV packages?</button>
+      <button class="quick-reply-btn" onclick="sendQuickReply('What are your shop timings?')">Shop timings</button>
+      <button class="quick-reply-btn" onclick="sendQuickReply('Do you install Android music systems?')">Android system?</button>
+      <button class="quick-reply-btn" onclick="sendQuickReply('How much does a dash camera cost?')">Dash cam price?</button>
+    </div>
+
+    <!-- Input -->
+    <div class="chat-input-row">
+      <textarea
+        class="chat-input"
+        id="chatInput"
+        placeholder="Ask about products, prices, timings…"
+        rows="1"
+        onkeydown="handleInputKey(event)"
+        oninput="autoResize(this)"
+      ></textarea>
+      <button class="chat-send-btn" id="chatSendBtn" onclick="sendMessage()" aria-label="Send message">➤</button>
+    </div>
+  </div>
+
+  <!-- Toggle button -->
+  <button class="chat-toggle-btn" onclick="toggleChat()" id="chatToggleBtn" aria-label="Open AI chat">
+    <span class="chat-btn-icon">🤖</span>
+    <span class="btn-label">Ask AI Assistant</span>
+    <span class="chat-btn-dot"></span>
+  </button>
 </div>
 
 <!-- FOOTER -->
@@ -1429,6 +1316,7 @@ Read More
     <a href="#about">About</a>
     <a href="#services">Services</a>
     <a href="#gallery">Products</a>
+    <a href="#ai-insights">AI Insights</a>
     <a href="#reviews">Reviews</a>
     <a href="#contact">Contact</a>
     <a href="https://Wa.me/+919425110451">WhatsApp</a>
@@ -1440,179 +1328,329 @@ Read More
   </div>
 </footer>
 
+<!-- ══════════════════════════════════════════════════════════════
+     JAVASCRIPT
+══════════════════════════════════════════════════════════════ -->
 <script>
-  // Mobile menu
-  function toggleMenu() {
-    document.getElementById('mobileMenu').classList.toggle('open');
+// ─── NAVIGATION ───────────────────────────────────────────────────────────
+function toggleMenu() {
+  document.getElementById('mobileMenu').classList.toggle('open');
+}
+document.addEventListener('click', (e) => {
+  if (!e.target.closest('nav') && !e.target.closest('.mobile-menu')) {
+    document.getElementById('mobileMenu').classList.remove('open');
   }
+});
 
-  // Gallery filter
-  function filterGallery(cat, btn) {
-    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-    document.querySelectorAll('.gallery-item').forEach(item => {
-      if (cat === 'all' || item.dataset.cat === cat) {
-        item.classList.remove('hidden');
-      } else {
-        item.classList.add('hidden');
-      }
-    });
-  }
-
-  // Scroll animations
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        e.target.style.opacity = '1';
-        e.target.style.transform = 'translateY(0)';
-        e.target.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-      }
-    });
-  }, { threshold: 0.12 });
-
-  document.querySelectorAll('.service-card, .why-card, .review-card, .gallery-item, .contact-item').forEach(el => {
-    el.style.opacity = '0';
-    el.style.transform = 'translateY(20px)';
-    observer.observe(el);
-  });
-
-  // Close menu on outside click
-  document.addEventListener('click', (e) => {
-    if (!e.target.closest('nav') && !e.target.closest('.mobile-menu')) {
-      document.getElementById('mobileMenu').classList.remove('open');
+// ─── GALLERY FILTER ───────────────────────────────────────────────────────
+function filterGallery(cat, btn) {
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.gallery-item').forEach(item => {
+    if (cat === 'all' || item.dataset.cat === cat) {
+      item.classList.remove('hidden');
+    } else {
+      item.classList.add('hidden');
     }
   });
+}
 
-  // ── DATA ──────────────────────────────────────────────────────────────────
-  // To add real photos: replace the `placeholder` emoji with an `img` path.
-  // Each item: { name, meta, img: 'path/to/photo.jpg' OR placeholder: '🪑' }
+// ─── PRODUCT MODAL ────────────────────────────────────────────────────────
+const categoryData = {
+  interior: {
+    tag: 'Car Interior', title: 'Car Interior',
+    subtitle: 'Premium seat covers, floor mats, steering wheel covers & more for every car model.',
+    items: [
+      { name: 'Premium Seat Covers', meta: 'Leather & Fabric', placeholder: '🪑' },
+      { name: 'Floor Mats & Carpets', meta: '3D & Regular Fit', placeholder: '🧹' },
+      { name: 'Steering Wheel Covers', meta: 'Multiple Designs', placeholder: '🎛️' },
+      { name: 'Dashboard Covers', meta: 'Anti-UV Protection', placeholder: '🛡️' },
+      { name: 'Car Curtains', meta: 'Custom Fit', placeholder: '🪟' },
+      { name: 'Gear & Handbrake Covers', meta: 'Leather Finish', placeholder: '⚙️' },
+    ]
+  },
+  exterior: {
+    tag: 'Car Exterior', title: 'Car Exterior',
+    subtitle: 'LED lights, body kits, alloy wheels & exterior styling for your car.',
+    items: [
+      { name: 'LED Fog Lights', meta: 'Universal & Car-Specific', placeholder: '💡' },
+      { name: 'Body Side Moulding', meta: 'Scratch Protection', placeholder: '🎨' },
+      { name: 'Chrome Garnish', meta: 'All Popular Models', placeholder: '✨' },
+      { name: 'Roof Rails', meta: 'SUV & Hatchback', placeholder: '🚙' },
+      { name: 'Alloy Wheel Covers', meta: '13" to 17"', placeholder: '⭕' },
+      { name: 'Door Visors', meta: 'Rain Guards', placeholder: '🌧️' },
+    ]
+  },
+  audio: {
+    tag: 'Car Audio', title: 'Android Music Systems',
+    subtitle: 'Android head units, speakers, amplifiers & complete audio upgrades.',
+    items: [
+      { name: 'Android Head Units', meta: 'CarPlay & Android Auto', placeholder: '📺' },
+      { name: '2-DIN Music Systems', meta: 'Bluetooth + USB', placeholder: '📻' },
+      { name: 'Car Speakers', meta: '4" to 6×9"', placeholder: '🔊' },
+      { name: 'Subwoofers', meta: '8" to 12"', placeholder: '💥' },
+      { name: 'Amplifiers', meta: '2 & 4 Channel', placeholder: '📡' },
+      { name: 'Speaker Enclosures', meta: 'Custom Fit Boxes', placeholder: '📦' },
+    ]
+  },
+  dash: {
+    tag: 'Dash Cameras', title: 'Dash Cameras',
+    subtitle: 'Front, rear & 360° dash cams — hidden professional installation included.',
+    items: [
+      { name: 'Front Dash Camera', meta: 'Full HD 1080p', placeholder: '📷' },
+      { name: 'Front + Rear Combo', meta: 'Dual Channel', placeholder: '🎥' },
+      { name: '360° Dash Camera', meta: 'All-Round Coverage', placeholder: '🔄' },
+      { name: 'Parking Mode Cams', meta: 'Records When Parked', placeholder: '🅿️' },
+      { name: '4K Ultra HD Cameras', meta: 'Night Vision', placeholder: '🌙' },
+      { name: 'GPS Dash Cameras', meta: 'Route Tracking', placeholder: '🗺️' },
+    ]
+  },
+  cctv: {
+    tag: 'CCTV & Security', title: 'CCTV & Security',
+    subtitle: 'Complete surveillance solutions for homes, shops, offices & warehouses.',
+    items: [
+      { name: 'IP CCTV Cameras', meta: 'Indoor & Outdoor', placeholder: '👁️' },
+      { name: 'Bullet Cameras', meta: 'Long Range', placeholder: '🔫' },
+      { name: 'Dome Cameras', meta: 'Ceiling Mount', placeholder: '🔵' },
+      { name: 'DVR / NVR Packages', meta: '4 to 16 Channel', placeholder: '🖥️' },
+      { name: 'Video Doorbells', meta: 'Smart & Wireless', placeholder: '🔔' },
+      { name: 'Shop Alarm Systems', meta: 'Motion + Siren', placeholder: '🚨' },
+    ]
+  },
+  electronics: {
+    tag: 'Car Electronics', title: 'Car Electronics',
+    subtitle: 'Parking sensors, GPS trackers, inverters & smart electronics for your vehicle.',
+    items: [
+      { name: 'Reverse Parking Sensors', meta: '4 & 8 Sensor Systems', placeholder: '📡' },
+      { name: 'Reverse Cameras', meta: 'Night Vision', placeholder: '🔙' },
+      { name: 'GPS Vehicle Trackers', meta: 'Real-Time Tracking', placeholder: '📍' },
+      { name: 'Car Inverters', meta: '150W to 1000W', placeholder: '🔋' },
+      { name: 'USB & Type-C Chargers', meta: 'Fast Charging', placeholder: '⚡' },
+      { name: 'Central Locking Systems', meta: 'Remote & Smart', placeholder: '🔑' },
+    ]
+  }
+};
 
-  const categoryData = {
-    interior: {
-      tag: 'Car Interior',
-      title: 'Car Interior',
-      subtitle: 'Premium seat covers, floor mats, steering wheel covers & more for every car model.',
-      items: [
-        { name: 'Premium Seat Covers',      meta: 'Leather & Fabric',      placeholder: '🪑' },
-        { name: 'Floor Mats & Carpets',     meta: '3D & Regular Fit',      placeholder: '🧹' },
-        { name: 'Steering Wheel Covers',    meta: 'Multiple Designs',      placeholder: '🎛️' },
-        { name: 'Dashboard Covers',         meta: 'Anti-UV Protection',    placeholder: '🛡️' },
-        { name: 'Car Curtains',             meta: 'Custom Fit',            placeholder: '🪟' },
-        { name: 'Gear & Handbrake Covers',  meta: 'Leather Finish',        placeholder: '⚙️' },
-      ]
-    },
-    exterior: {
-      tag: 'Car Exterior',
-      title: 'Car Exterior',
-      subtitle: 'LED lights, body kits, alloy wheels & exterior styling for your car.',
-      items: [
-        { name: 'LED Fog Lights',           meta: 'Universal & Car-Specific', placeholder: '💡' },
-        { name: 'Body Side Moulding',       meta: 'Scratch Protection',       placeholder: '🎨' },
-        { name: 'Chrome Garnish',           meta: 'All Popular Models',       placeholder: '✨' },
-        { name: 'Roof Rails',               meta: 'SUV & Hatchback',          placeholder: '🚙' },
-        { name: 'Alloy Wheel Covers',       meta: '13" to 17"',               placeholder: '⭕' },
-        { name: 'Door Visors',              meta: 'Rain Guards',              placeholder: '🌧️' },
-      ]
-    },
-    audio: {
-      tag: 'Car Audio',
-      title: 'Android Music Systems',
-      subtitle: 'Android head units, speakers, amplifiers & complete audio upgrades.',
-      items: [
-        { name: 'Android Head Units',        meta: 'CarPlay & Android Auto',   placeholder: '📺' },
-        { name: '2-DIN Music Systems',       meta: 'Bluetooth + USB',          placeholder: '📻' },
-        { name: 'Car Speakers',              meta: '4" to 6×9"',               placeholder: '🔊' },
-        { name: 'Subwoofers',                meta: '8" to 12"',                placeholder: '💥' },
-        { name: 'Amplifiers',                meta: '2 & 4 Channel',            placeholder: '📡' },
-        { name: 'Speaker Enclosures',        meta: 'Custom Fit Boxes',         placeholder: '📦' },
-      ]
-    },
-    dash: {
-      tag: 'Dash Cameras',
-      title: 'Dash Cameras',
-      subtitle: 'Front, rear & 360° dash cams — hidden professional installation included.',
-      items: [
-        { name: 'Front Dash Camera',         meta: 'Full HD 1080p',             placeholder: '📷' },
-        { name: 'Front + Rear Combo',        meta: 'Dual Channel',              placeholder: '🎥' },
-        { name: '360° Dash Camera',          meta: 'All-Round Coverage',        placeholder: '🔄' },
-        { name: 'Parking Mode Cams',         meta: 'Records When Parked',       placeholder: '🅿️' },
-        { name: '4K Ultra HD Cameras',       meta: 'Night Vision',              placeholder: '🌙' },
-        { name: 'GPS Dash Cameras',          meta: 'Route Tracking',            placeholder: '🗺️' },
-      ]
-    },
-    cctv: {
-      tag: 'CCTV & Security',
-      title: 'CCTV & Security',
-      subtitle: 'Complete surveillance solutions for homes, shops, offices & warehouses.',
-      items: [
-        { name: 'IP CCTV Cameras',           meta: 'Indoor & Outdoor',          placeholder: '👁️' },
-        { name: 'Bullet Cameras',            meta: 'Long Range',                placeholder: '🔫' },
-        { name: 'Dome Cameras',              meta: 'Ceiling Mount',             placeholder: '🔵' },
-        { name: 'DVR / NVR Packages',        meta: '4 to 16 Channel',           placeholder: '🖥️' },
-        { name: 'Video Doorbells',           meta: 'Smart & Wireless',          placeholder: '🔔' },
-        { name: 'Shop Alarm Systems',        meta: 'Motion + Siren',            placeholder: '🚨' },
-      ]
-    },
-    electronics: {
-      tag: 'Car Electronics',
-      title: 'Car Electronics',
-      subtitle: 'Parking sensors, GPS trackers, inverters & smart electronics for your vehicle.',
-      items: [
-        { name: 'Reverse Parking Sensors',   meta: '4 & 8 Sensor Systems',      placeholder: '📡' },
-        { name: 'Reverse Cameras',           meta: 'Night Vision',              placeholder: '🔙' },
-        { name: 'GPS Vehicle Trackers',      meta: 'Real-Time Tracking',        placeholder: '📍' },
-        { name: 'Car Inverters',             meta: '150W to 1000W',             placeholder: '🔋' },
-        { name: 'USB & Type-C Chargers',     meta: 'Fast Charging',             placeholder: '⚡' },
-        { name: 'Central Locking Systems',   meta: 'Remote & Smart',            placeholder: '🔑' },
-      ]
-    }
-  };
-
-  // ── OPEN / CLOSE ───────────────────────────────────────────────────────────
-  function openModal(catKey) {
-    const data = categoryData[catKey];
-    if (!data) return;
-
-    document.getElementById('modalTag').textContent     = data.tag;
-    document.getElementById('modalTitle').textContent   = data.title;
-    document.getElementById('modalSubtitle').textContent = data.subtitle;
-
-    const grid = document.getElementById('modalGrid');
-    grid.innerHTML = data.items.map(item => `
-      <div class="modal-photo-item">
-        ${item.img
-          ? `<img class="modal-photo-thumb" src="${item.img}" alt="${item.name}" loading="lazy">`
-          : `<div class="modal-photo-placeholder">${item.placeholder}<span style="font-size:11px;color:var(--grey);font-family:'Space Mono',monospace;">Add photo here</span></div>`
-        }
-        <div class="modal-photo-label">
-          <div class="modal-photo-name">${item.name}</div>
-          <div class="modal-photo-meta">${item.meta}</div>
-        </div>
+function openModal(catKey) {
+  const data = categoryData[catKey];
+  if (!data) return;
+  document.getElementById('modalTag').textContent = data.tag;
+  document.getElementById('modalTitle').textContent = data.title;
+  document.getElementById('modalSubtitle').textContent = data.subtitle;
+  const grid = document.getElementById('modalGrid');
+  grid.innerHTML = data.items.map(item => `
+    <div class="modal-photo-item">
+      ${item.img
+        ? `<img class="modal-photo-thumb" src="${item.img}" alt="${item.name}" loading="lazy">`
+        : `<div class="modal-photo-placeholder">${item.placeholder}<span style="font-size:11px;color:var(--grey);font-family:'Space Mono',monospace;">Add photo here</span></div>`
+      }
+      <div class="modal-photo-label">
+        <div class="modal-photo-name">${item.name}</div>
+        <div class="modal-photo-meta">${item.meta}</div>
       </div>
-    `).join('');
-    document.getElementById('productModal').classList.add('open');
-    document.body.style.overflow = 'hidden';
-  }
-  function closeModal() {
-    document.getElementById('productModal').classList.remove('open');
-    document.body.style.overflow = '';
-  }
-  function handleOverlayClick(e) {
-    if (e.target === document.getElementById('productModal')) closeModal();
-  }
-  document.addEventListener('keydown', e => {
-    if (e.key === 'Escape') closeModal();
-  });
+    </div>
+  `).join('');
+  document.getElementById('productModal').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeModal() {
+  document.getElementById('productModal').classList.remove('open');
+  document.body.style.overflow = '';
+}
+function handleOverlayClick(e) {
+  if (e.target === document.getElementById('productModal')) closeModal();
+}
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') closeModal();
+});
 
-function toggleReview(button){
-  const moreText = button.parentElement.querySelector(".more-text");
-  if(moreText.style.display === "inline"){
-    moreText.style.display = "none";
-    button.innerText = "Read More";
+// ─── REVIEW READ MORE ─────────────────────────────────────────────────────
+function toggleReview(button) {
+  const moreText = button.parentElement.querySelector('.more-text');
+  if (moreText.style.display === 'inline') {
+    moreText.style.display = 'none';
+    button.innerText = 'Read More';
   } else {
-    moreText.style.display = "inline";
-    button.innerText = "Read Less";
+    moreText.style.display = 'inline';
+    button.innerText = 'Read Less';
   }
+}
+
+// ─── SCROLL ANIMATION ────────────────────────────────────────────────────
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.style.opacity = '1';
+      e.target.style.transform = 'translateY(0)';
+      e.target.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+    }
+  });
+}, { threshold: 0.12 });
+
+document.querySelectorAll(
+  '.service-card, .why-card, .review-card, .gallery-item, .contact-item, .insight-chart-card, .workflow-step'
+).forEach(el => {
+  el.style.opacity = '0';
+  el.style.transform = 'translateY(20px)';
+  observer.observe(el);
+});
+
+// ══════════════════════════════════════════════════════════════════════════
+// AI CHAT WIDGET
+// ══════════════════════════════════════════════════════════════════════════
+
+// ── CONFIG ────────────────────────────────────────────────────────────────
+// When deploying with Next.js, this is your API route.
+// For local dev: http://localhost:3000/api/chat
+// For Vercel production: /api/chat  (same-origin, no need to change)
+const CHAT_API_URL = '/api/chat';
+
+let chatHistory = [];
+let chatOpen = false;
+let chatInitialized = false;
+
+// ── TOGGLE PANEL ──────────────────────────────────────────────────────────
+function toggleChat() {
+  chatOpen = !chatOpen;
+  const panel = document.getElementById('chatPanel');
+  const btn   = document.getElementById('chatToggleBtn');
+  if (chatOpen) {
+    panel.classList.add('open');
+    btn.style.borderColor = 'var(--blue-bright)';
+    if (!chatInitialized) {
+      initChat();
+      chatInitialized = true;
+    }
+    setTimeout(() => document.getElementById('chatInput').focus(), 300);
+  } else {
+    panel.classList.remove('open');
+    btn.style.borderColor = 'var(--blue)';
+  }
+}
+
+// ── INIT with welcome message ─────────────────────────────────────────────
+function initChat() {
+  const welcomeMsg = {
+    role: 'assistant',
+    content: 'Namaste! 🙏 I\'m the Amit Electronics AI assistant.\n\nI can help you with product information, prices, shop timings, CCTV packages, car audio systems, and more.\n\nHow can I help you today?'
+  };
+  chatHistory.push(welcomeMsg);
+  renderMessage('bot', welcomeMsg.content);
+}
+
+// ── RENDER SINGLE MESSAGE ─────────────────────────────────────────────────
+function renderMessage(role, text) {
+  const container = document.getElementById('chatMessages');
+  const now = new Date().toLocaleTimeString('en-IN', { hour: '2-digit', minute: '2-digit' });
+
+  const msgEl = document.createElement('div');
+  msgEl.className = `chat-msg ${role}`;
+
+  // Convert newlines to <br> and basic bold (**text**)
+  const formatted = text
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+    .replace(/\n/g, '<br>');
+
+  msgEl.innerHTML = `
+    <div class="chat-bubble">${formatted}</div>
+    <div class="chat-time">${now}</div>
+  `;
+  container.appendChild(msgEl);
+  container.scrollTop = container.scrollHeight;
+}
+
+// ── TYPING INDICATOR ──────────────────────────────────────────────────────
+function showTyping() {
+  const container = document.getElementById('chatMessages');
+  const el = document.createElement('div');
+  el.className = 'chat-msg bot typing-indicator';
+  el.id = 'typingIndicator';
+  el.innerHTML = `<div class="chat-bubble"><div class="typing-dot"></div><div class="typing-dot"></div><div class="typing-dot"></div></div>`;
+  container.appendChild(el);
+  container.scrollTop = container.scrollHeight;
+}
+function hideTyping() {
+  const el = document.getElementById('typingIndicator');
+  if (el) el.remove();
+}
+
+// ── SEND MESSAGE ──────────────────────────────────────────────────────────
+async function sendMessage() {
+  const input = document.getElementById('chatInput');
+  const sendBtn = document.getElementById('chatSendBtn');
+  const text = input.value.trim();
+  if (!text) return;
+
+  // Hide quick replies after first user message
+  document.getElementById('quickReplies').style.display = 'none';
+
+  // Show user message
+  renderMessage('user', text);
+  chatHistory.push({ role: 'user', content: text });
+
+  // Clear input
+  input.value = '';
+  input.style.height = 'auto';
+  sendBtn.disabled = true;
+
+  showTyping();
+
+  try {
+    const response = await fetch(CHAT_API_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ messages: chatHistory })
+    });
+
+    hideTyping();
+
+    if (!response.ok) {
+      const err = await response.json().catch(() => ({}));
+      throw new Error(err.error || `Server error ${response.status}`);
+    }
+
+    const data = await response.json();
+    const reply = data.reply || 'Sorry, I could not get a response. Please try again.';
+
+    chatHistory.push({ role: 'assistant', content: reply });
+    renderMessage('bot', reply);
+
+  } catch (error) {
+    hideTyping();
+    console.error('Chat error:', error);
+
+    // Show inline error
+    const container = document.getElementById('chatMessages');
+    const errEl = document.createElement('div');
+    errEl.className = 'chat-error';
+    errEl.textContent = '⚠️ Could not connect to AI. Check your internet or try again.';
+    container.appendChild(errEl);
+    container.scrollTop = container.scrollHeight;
+  } finally {
+    sendBtn.disabled = false;
+    input.focus();
+  }
+}
+
+// ── QUICK REPLY ───────────────────────────────────────────────────────────
+function sendQuickReply(text) {
+  document.getElementById('chatInput').value = text;
+  sendMessage();
+}
+
+// ── KEYBOARD & TEXTAREA ───────────────────────────────────────────────────
+function handleInputKey(e) {
+  if (e.key === 'Enter' && !e.shiftKey) {
+    e.preventDefault();
+    sendMessage();
+  }
+}
+function autoResize(el) {
+  el.style.height = 'auto';
+  el.style.height = Math.min(el.scrollHeight, 100) + 'px';
 }
 </script>
 </body>

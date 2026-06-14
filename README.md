@@ -33,31 +33,31 @@ Small and medium retailers in India manage inventory through manual Excel sheets
 
 ### Live Website Homepage
 
-![Homepage](images/Homepage.png)
+![Homepage](public/images/Homepage.png)
 
 *Modern retail website showcasing Amit Electronics products, services and AI-powered features.*
 
 ### AI Insights Dashboard
 
-![AI Insights](images/AI_insights.png)
+![AI Insights](public/images/AI_insights.png)
 
 *Interactive analytics section displaying ABC classification, category intelligence and business insights generated from real sales data.*
 
 ### Gemini AI Product Assistant
 
-![AI Assistant](images/AI_assistant.png)
+![AI Assistant](public/images/AI_assistant.png)
 
 *Google Gemini powered assistant that helps customers discover suitable products based on their requirements.*
 
 ### Product Gallery
 
-![Product Gallery](images/product_gallery.png)
+![Product Gallery](public/images/product_gallery.png)
 
 *Category-wise product catalogue with interactive modal galleries for car accessories, CCTV systems and electronics.*
 
 ### ABC Classification Analysis
 
-![ABC Analysis](charts/02_top20_a_class.png)
+![ABC Analysis](public/charts/02_top20_a_class.png)
 
 *Top revenue-driving A-Class products identified through inventory classification analysis.*
 

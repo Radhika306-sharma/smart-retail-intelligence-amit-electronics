@@ -16,6 +16,53 @@ Small and medium retailers in India manage inventory through manual Excel sheets
 > *What should the shop stock, and how much of it?*
 
 ---
+## 🌟 Project Highlights
+
+* Built using **real sales data** from Amit Electronics, a 37-year-old retail business
+* Analysed **1,363 SKUs** generating **₹3.36 Crore revenue**
+* Implemented **ABC Inventory Classification** for stock prioritisation
+* Performed **Year-on-Year Growth Analysis** across 448 common products
+* Built a **Prophet-based demand forecasting proof-of-concept**
+* Integrated **Google Gemini AI** for customer product recommendations
+* Deployed a live business website with embedded ML insights
+* End-to-end project: Data → Analysis → Insights → Deployment
+
+---
+
+## 📸 Screenshots
+
+### Live Website Homepage
+
+![Homepage](images/Homepage.png)
+
+*Modern retail website showcasing Amit Electronics products, services and AI-powered features.*
+
+### AI Insights Dashboard
+
+![AI Insights](images/AI_insights.png)
+
+*Interactive analytics section displaying ABC classification, category intelligence and business insights generated from real sales data.*
+
+### Gemini AI Product Assistant
+
+![AI Assistant](images/AI_assistant.png)
+
+*Google Gemini powered assistant that helps customers discover suitable products based on their requirements.*
+
+### Product Gallery
+
+![Product Gallery](images/product_gallery.png)
+
+*Category-wise product catalogue with interactive modal galleries for car accessories, CCTV systems and electronics.*
+
+### ABC Classification Analysis
+
+![ABC Analysis](charts/02_top20_a_class.png)
+
+*Top revenue-driving A-Class products identified through inventory classification analysis.*
+
+---
+
 
 ## 📊 Dataset
 
@@ -97,18 +144,20 @@ Gemini AI chatbot integrated on the live website. Customers describe their car m
 smart-retail-intelligence-amit-electronics/
 │
 ├── notebook/ml/
-│   └── amit_electronics_intelligence.ipynb   # Main ML notebook (8 sections)
+│   └── Amit_Electronics_Sales_Analysis.ipynb   # Main ML notebook (8 sections)
 │
-├── charts/                                    # All generated chart PNGs
-│   ├── abc_analysis.png
-│   ├── yoy_growth.png
-│   ├── yoy_decline.png
-│   ├── category_revenue_bar.png
-│   ├── category_revenue_pie.png
-│   └── forecast_[product].png
+├── charts/
+│   ├── 01_abc_classification.png
+│   ├── 02_top20_a_class.png
+│   ├── 03_top10_growing.png
+│   ├── 04_top10_declining.png
+│   ├── 05_revenue_pie.png
+│   ├── 06_category_bar.png
+│   ├── 07_demand_forecast.png
+│   └── review-qr.png
 │
 ├── results/
-│   └── amit_summary.csv                       # Exported ML results
+│   └── sales_summary.csv                       # Exported ML results
 │
 ├── pages/
 │   ├── index.js                               # Next.js homepage redirect
